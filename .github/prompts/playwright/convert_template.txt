@@ -1,0 +1,10 @@
+Template to convert enhanced JSON to POM + Playwright test
+
+System: Use `enhanced.json` as input. For each enhanced_step:
+- If action == 'navigate' -> create a POM method navigateTo()
+- If action == 'login' -> create a helper method `login(username, password)` in a shared auth helper or call an existing fixture (leave TODO)
+- click/select/fill -> create atomic POM methods named by target (e.g., selectFromAccount(label))
+- wait/assert -> convert assertion to `expect` in test file, not in POM
+
+Example mapping snippet (to include in generator prompt):
+"For enhanced_steps: create POM methods for click/fill/select and in the test call them in order, then execute assertions listed in step.assertion. If selector_hint is present, use it as the locator. If selector_hint is null, add a TODO and use a best-effort locator like `page.locator('text="Label"')` or `page.getByRole(...)` and mark with // TODO: validate selector."

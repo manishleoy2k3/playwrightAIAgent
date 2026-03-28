@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Enhanced Test Case",
+  "type": "object",
+  "required": ["id","title","feature","enhanced_steps","generated_at","generator_version"],
+  "properties": {
+    "id": {"type":"string"},
+    "title": {"type":"string"},
+    "feature": {"type":"string"},
+    "preconditions": {"type":"array","items":{"type":"string"}},
+    "test_data": {"type":"object"},
+    "enhanced_steps": {
+      "type":"array",
+      "items": {
+        "type":"object",
+        "required":["step_index","action","target","assertion","confidence"],
+        "properties":{
+          "step_index":{"type":"integer"},
+          "action":{"type":"string"},
+          "target":{"type":"string"},
+          "selector_hint":{"type":["string","null"]},
+          "value":{"type":["string","null"]},
+          "assertion":{"type":["string","null"]},
+          "rationale":{"type":["string","null"]},
+          "sources":{"type":"array","items":{"type":"string"}},
+          "confidence":{"type":"number","minimum":0,"maximum":1}
+        }
+      }
+    },
+    "postconditions":{"type":"array","items":{"type":"string"}},
+    "selector_summary":{"type":"array"},
+    "notes":{"type":"string"},
+    "generated_at":{"type":"string"},
+    "generator_version":{"type":"string"},
+    "overall_confidence":{"type":"number","minimum":0,"maximum":1}
+  }
+}

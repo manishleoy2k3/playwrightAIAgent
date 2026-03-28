@@ -1,0 +1,35 @@
+{
+  "name": "playwright-rag-automation",
+  "version": "1.0.0",
+  "description": "RAG-based test generation and automation with Playwright",
+  "main": "index.js",
+  "scripts": {
+    "setup-kb": "ts-node utils/workflowExample.ts",
+    "load-kb": "ts-node utils/workflowExample.ts load",
+    "generate-tests": "ts-node utils/workflowExample.ts generate",
+    "generate-scripts": "ts-node utils/playwrightScriptGenerator.ts",
+    "test": "playwright test",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:heal": "playwright test && npx playwright-test-healer",
+    "regenerate-tests": "npm run generate-tests && npm run generate-scripts",
+    "build": "tsc",
+    "dev": "ts-node"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.1.0",
+    "@langchain/openai": "^0.0.16",
+    "@playwright/test": "^1.40.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "langchain": "^0.1.0",
+    "pg": "^8.11.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/pg": "^8.10.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.1"
+  }
+}

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.idea/
+.vscode/
+automation/generated/
+tests/page-objects/generated/
+.DS_Store

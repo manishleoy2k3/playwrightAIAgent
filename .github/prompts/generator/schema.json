@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generator Output",
+  "type": "object",
+  "required": ["pom_filename","pom_code","test_filename","test_code","manifest"],
+  "properties": {
+    "pom_filename":{"type":"string"},
+    "pom_code":{"type":"string"},
+    "test_filename":{"type":"string"},
+    "test_code":{"type":"string"},
+    "manifest":{"type":"object"}
+  }
+}
