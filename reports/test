@@ -1,0 +1,30 @@
+I am attaching my resume in this chat. Act as a strategic job search expert and career analyst. First, analyse my resume deeply to understand my experience, skills, achievements, industries, and seniority level. Based on this analysis, identify the most suitable roles for my profile. I am currently targeting the following roles: QA Manager/Architect and I am looking for opportunities in Remote International Jobs. After analysing my resume, perform a live job search across the web and major job platforms, including: 
+• LinkedIn Jobs 
+• Naukri 
+• Indeed 
+• Company career pages 
+• Wellfound (AngelList) 
+• Other credible startup or other job boards. 
+• Use apify connector to scrape the HR or Hiring manager contact requirement if needed. 
+Only include jobs that meet the following criteria: 
+• Job that are still active and not expired and posted within the last 7 days or maximum past 1 month and 
+• Match my skills, experience level, and target roles 
+• Remote roles available at international or within india
+Provide at least 20 relevant job opportunities in a structured table format with the following columns: 
+• Job Title
+• Company Name 
+• Location 
+• Direct Application Link 
+• Job Posting Date 
+• Required Experience 
+• Key Skills Required 
+• Salary Range (if available) 
+• Hiring Manager / Recruiter Name (if available) 
+• Hiring Manager LinkedIn Profile (if available) 
+• Company LinkedIn Page URL 
+• Source (LinkedIn / Naukri / Company Career Page / etc.) 
+Additionally: 
+• Briefly explain why each role is a good match for my resume 
+• Highlight any skills or keywords I should add to my resume to improve my chances
+for these roles. 
+Ensure the results are relevant, recent, active but not expired and actionable so I can directly start applying

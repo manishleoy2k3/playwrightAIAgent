@@ -298,65 +298,6 @@ Compile comprehensive test results and metrics from all previous stages.
 
 - **Deliverable**: Test report saved to specified location (e.g., `reports/test-report.md`)
 
----
-
-## Step 7: Commit to Git Repository
-
-### Objective:
-Commit all test artifacts and results to the Git repository with proper versioning and documentation.
-
-### Instructions
-- **Files to Commit**:
-  1. Test plan(s): `test-plans/`
-  2. Test scripts: `tests/`
-  3. Test configuration: `playwright.config.ts`
-  4. Test data: `test-data/` (if applicable)
-  5. Test report: `reports/`
-  6. Exploratory testing results: `reports/exploratory-testing-results.md`
-  7. Any utility files: `utils/`, `helpers/`
-
-- **Git Commit Steps**:
-  ```bash
-  # Stage all changes
-  git add .
-  
-  # Commit with descriptive message
-  git commit -m "feat: Add E2E tests for [Feature Name]
-  
-  - Add comprehensive test plan with happy path, negative scenarios, edge cases
-  - Implement 15+ Playwright automation scripts
-  - Achieve 100% test pass rate after healing
-  - Add support for multiple browsers (Chrome, Firefox, Safari)
-  - Include exploratory testing results and findings"
-  
-  # Push to repository
-  git push origin [branch-name]
-  ```
-
-- **Branch Strategy**:
-  - Use feature branch: `feature/e2e-tests-[feature-name]`
-  - Ensure all tests pass before merging
-  - Create pull request with test report attached
-
-- **Commit Message Format**:
-  - Type: `feat`, `test`, `fix`
-  - Scope: Feature name
-  - Description: Clear summary of what was added
-  - Body: Additional details about test coverage
-
-- **Pre-commit Checks**:
-  - [ ] All tests pass locally
-  - [ ] Test report generated
-  - [ ] Code follows Playwright best practices
-  - [ ] No sensitive data in commits
-  - [ ] Configuration files are environment-agnostic
-
-- **Deliverables**:
-  - Code committed to repository
-  - Pull request created with test report
-  - Tests accessible to the team
-
----
 
 ## Workflow Summary
 
@@ -380,7 +321,7 @@ Step 7: Commit to Git
 
 ## Key Success Criteria
 
-- ✓ All 7 roles completed successfully
+- ✓ All 7 step completed successfully
 - ✓ 100% test pass rate after healing
 - ✓ Comprehensive test coverage (happy path, negative, edge cases)
 - ✓ Tests pass across multiple browsers
