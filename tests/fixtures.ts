@@ -7,6 +7,15 @@
 
 import { test as base, expect, Page, Browser } from '@playwright/test';
 import * as fs from 'fs';
+import {
+  BasePage,
+  LoginPage,
+  InventoryPage,
+  CartPage,
+  CheckoutStepOnePage,
+  CheckoutStepTwoPage,
+  CheckoutCompletePage,
+} from './pages/index';
 
 const BASE_URL = 'https://www.saucedemo.com';
 
@@ -67,6 +76,55 @@ export const authenticatedTest = base.extend<{
     }
     
     await use(page);
+  },
+});
+
+/**
+ * Page Object Test - Provides page object instances for reusable test code
+ * Usage:
+ *   test('my test', async ({ authenticatedPage, pages }) => {
+ *     await pages.inventory.addProductToCart('sauce-labs-backpack');
+ *   });
+ */
+export interface PageObjects {
+  base: BasePage;
+  login: LoginPage;
+  inventory: InventoryPage;
+  cart: CartPage;
+  checkoutStepOne: CheckoutStepOnePage;
+  checkoutStepTwo: CheckoutStepTwoPage;
+  checkoutComplete: CheckoutCompletePage;
+}
+
+export const pageObjectTest = base.extend<{
+  authenticatedPage: Page;
+  pages: PageObjects;
+}>({
+  authenticatedPage: async ({ page }, use) => {
+    // If storageState is configured, page will be pre-authenticated
+    await page.goto(BASE_URL);
+    
+    const isAuthenticated = await checkIfAuthenticated(page);
+    
+    if (!isAuthenticated) {
+      await performLogin(page, TEST_USERS.standard);
+    }
+    
+    await use(page);
+  },
+
+  pages: async ({ authenticatedPage }, use) => {
+    const pageObjects: PageObjects = {
+      base: new BasePage(authenticatedPage),
+      login: new LoginPage(authenticatedPage),
+      inventory: new InventoryPage(authenticatedPage),
+      cart: new CartPage(authenticatedPage),
+      checkoutStepOne: new CheckoutStepOnePage(authenticatedPage),
+      checkoutStepTwo: new CheckoutStepTwoPage(authenticatedPage),
+      checkoutComplete: new CheckoutCompletePage(authenticatedPage),
+    };
+
+    await use(pageObjects);
   },
 });
 
