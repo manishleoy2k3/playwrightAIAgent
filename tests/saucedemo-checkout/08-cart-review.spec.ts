@@ -1,144 +1,123 @@
 // spec: specs/saucedemo-checkout-test-plan.md
 // Category: Cart Review and Product Details Tests
 
-import { authenticatedTest as test, expect } from '../fixtures';
+import { pageObjectTest as test, expect } from '../fixtures';
 
 const BASE_URL = 'https://www.saucedemo.com';
 
 test.describe('Cart Review and Product Details Tests', () => {
-  
-  test('Cart displays correct item quantities and totals', async ({ authenticatedPage: page }) => {
+
+  test('Cart displays correct item quantities and totals', async ({ pages }) => {
     // Step 1: Add items
     // Add backpack and bike light
-    await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
-    
-    // Verify cart badge shows '1'
-    await expect(page.locator('[data-test="shopping-cart-link"]').filter({ hasText: '1' })).toBeVisible();
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
 
-    await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
+    // Verify cart badge shows '1'
+    expect(await pages.inventory.getCartBadgeCount()).toBe(1);
+
+    await pages.inventory.addProductToCart('sauce-labs-bike-light');
 
     // Verify cart badge shows '2'
-    await expect(page.locator('[data-test="shopping-cart-link"]').filter({ hasText: '2' })).toBeVisible();
+    expect(await pages.inventory.getCartBadgeCount()).toBe(2);
 
     // Step 2: Navigate to cart
-    await page.locator('[data-test="shopping-cart-link"]').click();
-    await expect(page).toHaveURL(/.*cart.html/);
+    await pages.inventory.goToCart();
 
     // Step 3: Verify cart displays correct quantities
     // Looking for QTY column header
-    await expect(page.locator('text=QTY')).toBeVisible();
+    expect(await pages.cart.isQuantityHeaderVisible()).toBe(true);
 
     // Verify items are listed
-    await expect(page.locator('text=Sauce Labs Backpack')).toBeVisible();
-    await expect(page.locator('text=Sauce Labs Bike Light')).toBeVisible();
+    expect(await pages.cart.isItemVisible('Sauce Labs Backpack')).toBe(true);
+    expect(await pages.cart.isItemVisible('Sauce Labs Bike Light')).toBe(true);
 
     // Step 4: Verify cart item count matches
-    const cartItems = page.locator('[data-test*="remove"]');
-    const cartItemCount = await cartItems.count();
-    expect(cartItemCount).toBe(2);
+    expect(await pages.cart.getCartItemCount()).toBe(2);
   });
 
-  test('Remove button removes items from cart individually', async ({ authenticatedPage: page }) => {
+  test('Remove button removes items from cart individually', async ({ pages }) => {
     // Step 1: Add items
-    await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
-    await page.locator('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click();
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
+    await pages.inventory.addProductToCart('sauce-labs-bolt-t-shirt');
 
     // Verify cart badge shows '2'
-    await expect(page.locator('[data-test="shopping-cart-link"]').filter({ hasText: '2' })).toBeVisible();
+    expect(await pages.inventory.getCartBadgeCount()).toBe(2);
 
     // Step 2: Navigate to cart
-    await page.locator('[data-test="shopping-cart-link"]').click();
-    await expect(page).toHaveURL(/.*cart.html/);
+    await pages.inventory.goToCart();
 
     // Verify both items are displayed
-    await expect(page.getByRole('link', { name: /Sauce Labs Backpack/ })).toBeVisible();
-    await expect(page.getByRole('link', { name: /Sauce Labs Bolt T-Shirt/ })).toBeVisible();
+    expect(await pages.cart.isItemVisible('Sauce Labs Backpack')).toBe(true);
+    expect(await pages.cart.isItemVisible('Sauce Labs Bolt T-Shirt')).toBe(true);
 
     // Step 3: Click Remove button for Backpack
-    const backpackRemoveBtn = page.locator('[data-test="remove-sauce-labs-backpack"]');
-    await backpackRemoveBtn.click();
+    await pages.cart.removeItem('sauce-labs-backpack');
 
     // Step 4: Verify Backpack is removed and cart badge updates to '1'
-    await expect(page.locator('text=Sauce Labs Backpack')).not.toBeVisible();
-    await expect(page.locator('[data-test="shopping-cart-link"]').filter({ hasText: '1' })).toBeVisible();
+    expect(await pages.cart.isItemVisible('Sauce Labs Backpack')).toBe(false);
+    expect(await pages.inventory.getCartBadgeCount()).toBe(1);
 
     // Step 5: Verify T-Shirt remains
-    await expect(page.getByRole('link', { name: /Sauce Labs Bolt T-Shirt/ })).toBeVisible();
+    expect(await pages.cart.isItemVisible('Sauce Labs Bolt T-Shirt')).toBe(true);
 
     // Step 6: Remove the remaining item
-    const tshirtRemoveBtn = page.locator('[data-test="remove-sauce-labs-bolt-t-shirt"]');
-    await tshirtRemoveBtn.click();
+    await pages.cart.removeItem('sauce-labs-bolt-t-shirt');
 
     // Step 7: Verify cart is now empty
-    await expect(page.locator('text=Sauce Labs Bolt T-Shirt')).not.toBeVisible();
-    
-    // Cart badge should not be visible or show '0'
-    const cartBadgeWithItems = page.locator('[data-test="shopping-cart-link"]:has-text("1"), [data-test="shopping-cart-link"]:has-text("2")');
-    await expect(cartBadgeWithItems).not.toBeVisible({ timeout: 5000 }).catch(() => {});
+    expect(await pages.cart.isItemVisible('Sauce Labs Bolt T-Shirt')).toBe(false);
+    expect(await pages.cart.isCartEmpty()).toBe(true);
   });
 
-  test('Cart displays product descriptions and links', async ({ authenticatedPage: page }) => {
+  test('Cart displays product descriptions and links', async ({ pages }) => {
     // Step 1: Add items
-    await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
-    await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
+    await pages.inventory.addProductToCart('sauce-labs-bike-light');
 
     // Step 2: Navigate to cart
-    await page.locator('[data-test="shopping-cart-link"]').click();
-    await expect(page).toHaveURL(/.*cart.html/);
+    await pages.inventory.goToCart();
 
     // Step 3: Verify product names are displayed
-    const backpackLink = page.locator('a:has-text("Sauce Labs Backpack")');
-    await expect(backpackLink).toBeVisible();
-
-    const bikeLink = page.locator('a:has-text("Sauce Labs Bike Light")');
-    await expect(bikeLink).toBeVisible();
+    expect(await pages.cart.isItemLinkVisible('Sauce Labs Backpack')).toBe(true);
+    expect(await pages.cart.isItemLinkVisible('Sauce Labs Bike Light')).toBe(true);
 
     // Step 4: Verify product descriptions are visible
     // Check for descriptive text about the products
-    const descPageContent = await page.content();
-    expect(descPageContent).toContain('sleek');
-    // Use case-insensitive check for water - the actual description has "Water-resistant"
-    expect(descPageContent.toLowerCase()).toContain('water');
+    expect(await pages.cart.getCartContent()).toContain('sleek');
+    expect(await pages.cart.getCartContent().toLowerCase()).toContain('water');
   });
 
-  test('Cart navigation options are available and functional', async ({ authenticatedPage: page }) => {
+  test('Cart navigation options are available and functional', async ({ pages }) => {
     // Step 1: Add items
-    await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
-    await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
+    await pages.inventory.addProductToCart('sauce-labs-bike-light');
 
     // Verify cart badge shows '2'
-    const cartBadgeCount = page.locator('[data-test="shopping-cart-link"]').filter({ hasText: '2' });
-    await expect(cartBadgeCount).toBeVisible();
+    expect(await pages.inventory.getCartBadgeCount()).toBe(2);
 
     // Step 2: Navigate to cart
-    await page.locator('[data-test="shopping-cart-link"]').click();
-    await expect(page).toHaveURL(/.*cart.html/);
+    await pages.inventory.goToCart();
 
     // Step 3: Verify Continue Shopping button is visible
-    const continueShoppingBtn = page.locator('button:has-text("Continue Shopping")');
-    await expect(continueShoppingBtn).toBeVisible();
+    expect(await pages.cart.isContinueShoppingButtonVisible()).toBe(true);
 
     // Step 4: Verify Checkout button is visible
-    const checkoutBtn = page.locator('[data-test="checkout"]');
-    await expect(checkoutBtn).toBeVisible();
+    expect(await pages.cart.isCheckoutButtonVisible()).toBe(true);
 
     // Step 5: Verify Continue Shopping navigates back to products
-    await continueShoppingBtn.click();
-    await expect(page).toHaveURL(/.*inventory.html/);
+    await pages.cart.clickContinueShopping();
 
     // Step 6: Verify cart persists (items still in cart, badge shows '2')
-    await expect(page.locator('[data-test="shopping-cart-link"]').filter({ hasText: '2' })).toBeVisible();
+    expect(await pages.inventory.getCartBadgeCount()).toBe(2);
 
     // Step 7: Navigate back to cart using cart badge
-    await page.locator('[data-test="shopping-cart-link"]').click();
-    await expect(page).toHaveURL(/.*cart.html/);
+    await pages.inventory.goToCart();
 
     // Step 8: Verify items are still in cart
-    await expect(page.locator('text=Sauce Labs Backpack')).toBeVisible();
-    await expect(page.locator('text=Sauce Labs Bike Light')).toBeVisible();
+    expect(await pages.cart.isItemVisible('Sauce Labs Backpack')).toBe(true);
+    expect(await pages.cart.isItemVisible('Sauce Labs Bike Light')).toBe(true);
 
     // Step 9: Verify Checkout button is functional
-    await checkoutBtn.click();
-    await expect(page).toHaveURL(/.*checkout-step-one.html/);
+    await pages.cart.clickCheckout();
   });
+
 });

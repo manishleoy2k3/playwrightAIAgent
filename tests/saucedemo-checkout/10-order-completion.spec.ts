@@ -1,117 +1,97 @@
 // spec: specs/saucedemo-checkout-test-plan.md
 // Category: Order Completion and Confirmation Tests
 
-import { authenticatedTest as test, expect } from '../fixtures';
+import { pageObjectTest as test, expect } from '../fixtures';
 
 const BASE_URL = 'https://www.saucedemo.com';
 
-/**
- * Helper function to complete full checkout workflow (assumes authenticated page)
- */
-async function completeCheckout(page: any) {
-  // Add item to cart
-  await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
-  
-  // Navigate through checkout
-  await page.locator('[data-test="shopping-cart-link"]').click();
-  await page.locator('[data-test="checkout"]').click();
-  
-  // Fill checkout information
-  await page.locator('[data-test="firstName"]').fill('John');
-  await page.locator('[data-test="lastName"]').fill('Doe');
-  await page.locator('[data-test="postalCode"]').fill('12345');
-  
-  // Navigate to overview
-  await page.locator('[data-test="continue"]').click();
-  
-  // Complete order
-  await page.locator('[data-test="finish"]').click();
-  
-  await expect(page).toHaveURL(/.*checkout-complete.html/);
-}
-
 test.describe('Order Completion and Confirmation Tests', () => {
-  
-  test('Order confirmation page displays all required elements', async ({ authenticatedPage: page }) => {
+
+  test('Order confirmation page displays all required elements', async ({ pages }) => {
     // Step 1: Complete full checkout workflow
-    await completeCheckout(page);
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
+    await pages.inventory.goToCart();
+    await pages.cart.clickCheckout();
+    await pages.checkoutStepOne.fillCustomerInfo('John', 'Doe', '12345');
+    await pages.checkoutStepOne.clickContinue();
+    await pages.checkoutStepTwo.clickFinish();
 
     // Step 2: Verify page title and heading
-    await expect(page).toHaveTitle(/Swag Labs/i);
-    await expect(page.locator('text=Checkout: Complete!')).toBeVisible();
+    expect(await pages.checkoutComplete.getPageTitle()).toBe('Checkout: Complete!');
 
     // Step 3: Verify success message heading
-    const thankYouHeading = page.locator('text=Thank you for your order!');
-    await expect(thankYouHeading).toBeVisible();
-    // Verify it's a heading element
-    const headingRole = thankYouHeading.locator('xpath=/h2');
-    
+    expect(await pages.checkoutComplete.isThankYouMessageVisible()).toBe(true);
+
     // Step 4: Verify confirmation message
-    await expect(page.locator('text=Your order has been dispatched')).toBeVisible();
-    await expect(page.locator('text=as fast as the pony can get there')).toBeVisible();
+    expect(await pages.checkoutComplete.isOrderDispatchedMessageVisible()).toBe(true);
+    expect(await pages.checkoutComplete.isPonyExpressMessageVisible()).toBe(true);
 
     // Step 5: Verify Pony Express image is displayed
-    const ponyImage = page.locator('img[alt="Pony Express"]');
-    await expect(ponyImage).toBeVisible();
+    expect(await pages.checkoutComplete.isPonyExpressImageVisible()).toBe(true);
 
     // Step 6: Verify Back Home button is displayed and clickable
-    const backHomeBtn = page.locator('[data-test="back-to-products"]');
-    await expect(backHomeBtn).toBeVisible();
-    await expect(backHomeBtn).toBeEnabled();
+    expect(await pages.checkoutComplete.isBackToProductsButtonVisible()).toBe(true);
+    expect(await pages.checkoutComplete.isBackToProductsButtonEnabled()).toBe(true);
   });
 
-  test('Back Home button clears cart and returns to products page', async ({ authenticatedPage: page }) => {
+  test('Back Home button clears cart and returns to products page', async ({ pages }) => {
     // Step 1: Complete full checkout
-    await completeCheckout(page);
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
+    await pages.inventory.goToCart();
+    await pages.cart.clickCheckout();
+    await pages.checkoutStepOne.fillCustomerInfo('John', 'Doe', '12345');
+    await pages.checkoutStepOne.clickContinue();
+    await pages.checkoutStepTwo.clickFinish();
 
     // Step 2: Verify we're on completion page
-    await expect(page).toHaveURL(/.*checkout-complete.html/);
+    expect(await pages.checkoutComplete.isOnCompletePage()).toBe(true);
 
     // Step 3: Verify cart badge shows 0 or is not visible before clicking Back Home
     // (order was already completed, so cart should be empty)
-    const cartBadgeWithItems = page.locator('[data-test="shopping-cart-link"]:has-text("1")');
-    await expect(cartBadgeWithItems).not.toBeVisible({ timeout: 3000 }).catch(() => {});
+    expect(await pages.inventory.getCartBadgeCount()).toBe(0);
 
     // Step 4: Click Back Home button
-    await page.locator('[data-test="back-to-products"]').click();
+    await pages.checkoutComplete.clickBackToProducts();
 
     // Step 5: Verify returned to products page
-    await expect(page).toHaveURL(/.*inventory.html/);
+    expect(await pages.inventory.isOnInventoryPage()).toBe(true);
 
     // Step 6: Verify products are displayed
-    await expect(page.locator('text=Sauce Labs Backpack')).toBeVisible();
-    await expect(page.locator('text=Sauce Labs Bike Light')).toBeVisible();
+    expect(await pages.inventory.isProductVisible('Sauce Labs Backpack')).toBe(true);
+    expect(await pages.inventory.isProductVisible('Sauce Labs Bike Light')).toBe(true);
 
     // Step 7: Verify shopping cart is empty (no badge or badge shows 0)
-    const cartBadgeVisible = page.locator('[data-test="shopping-cart-link"]:has-text("1"), [data-test="shopping-cart-link"]:has-text("2")');
-    await expect(cartBadgeVisible).not.toBeVisible({ timeout: 5000 }).catch(() => {});
+    expect(await pages.inventory.getCartBadgeCount()).toBe(0);
 
     // Step 8: Verify all 6 products are displayed (showing fresh inventory page)
-    const productCount = await page.locator('a[data-testid^="inventory-item"]').count();
-    // Or check for product names
-    await expect(page.locator('text=Sauce Labs Backpack')).toBeVisible();
-    await expect(page.locator('text=Sauce Labs Onesie')).toBeVisible();
+    expect(await pages.inventory.getProductCount()).toBeGreaterThanOrEqual(6);
   });
 
-  test('Order confirmation URL is correct', async ({ authenticatedPage: page }) => {
+  test('Order confirmation URL is correct', async ({ pages }) => {
     // Step 1: Complete full checkout
-    await completeCheckout(page);
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
+    await pages.inventory.goToCart();
+    await pages.cart.clickCheckout();
+    await pages.checkoutStepOne.fillCustomerInfo('John', 'Doe', '12345');
+    await pages.checkoutStepOne.clickContinue();
+    await pages.checkoutStepTwo.clickFinish();
 
     // Step 2: Verify page URL is checkout-complete.html
-    expect(page.url()).toContain('checkout-complete.html');
-    expect(page.url()).toContain('https://www.saucedemo.com');
+    expect(await pages.checkoutComplete.getCurrentURL()).toContain('checkout-complete.html');
+    expect(await pages.checkoutComplete.getCurrentURL()).toContain('https://www.saucedemo.com');
 
     // Step 3: Verify URL does not contain error codes or malformed paths
-    expect(page.url()).not.toContain('404');
-    expect(page.url()).not.toContain('error');
+    expect(await pages.checkoutComplete.getCurrentURL()).not.toContain('404');
+    expect(await pages.checkoutComplete.getCurrentURL()).not.toContain('error');
 
     // Step 4: Verify page title is correct
-    await expect(page).toHaveTitle(/Swag Labs/i);
+    expect(await pages.checkoutComplete.getPageTitle()).toBe('Checkout: Complete!');
 
     // Step 5: Verify page is loaded successfully (heading is visible)
-    await expect(page.locator('text=Checkout: Complete!')).toBeVisible();
+    expect(await pages.checkoutComplete.isPageHeadingVisible()).toBe(true);
 
     // Step 6: Verify completion elements are present, confirming successful page load
-    await expect(page.locator('text=Thank you for your order!')).toBeVisible();
+    expect(await pages.checkoutComplete.isThankYouMessageVisible()).toBe(true);
   });
+
 });

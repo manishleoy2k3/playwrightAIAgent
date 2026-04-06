@@ -96,6 +96,22 @@ export class InventoryPage extends BasePage {
   }
 
   /**
+   * Check if product is visible
+   */
+  async isProductVisible(productName: string): Promise<boolean> {
+    const product = this.page.locator('.inventory_item_name', { hasText: productName });
+    return await this.isElementVisible(product);
+  }
+
+  /**
+   * Check if on inventory page
+   */
+  async isOnInventoryPage(): Promise<boolean> {
+    return await this.page.url().includes('inventory.html');
+  }
+}
+
+  /**
    * Get product names as array
    */
   async getProductNames(): Promise<string[]> {

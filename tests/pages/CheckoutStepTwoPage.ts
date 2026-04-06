@@ -128,4 +128,91 @@ export class CheckoutStepTwoPage extends BasePage {
     }
     return names;
   }
+
+  /**
+   * Check if item is visible (alias for isItemInOrderSummary)
+   */
+  async isItemVisible(itemName: string): Promise<boolean> {
+    return await this.isItemInOrderSummary(itemName);
+  }
+
+  /**
+   * Check if quantity header is visible
+   */
+  async isQuantityHeaderVisible(): Promise<boolean> {
+    const qtyHeader = this.page.locator('text=QTY');
+    return await this.isElementVisible(qtyHeader);
+  }
+
+  /**
+   * Check if description header is visible
+   */
+  async isDescriptionHeaderVisible(): Promise<boolean> {
+    const descHeader = this.page.locator('text=Description');
+    return await this.isElementVisible(descHeader);
+  }
+
+  /**
+   * Check if item total is visible
+   */
+  async isItemTotalVisible(): Promise<boolean> {
+    return await this.isElementVisible(this.itemTotal);
+  }
+
+  /**
+   * Check if tax is visible
+   */
+  async isTaxVisible(): Promise<boolean> {
+    return await this.isElementVisible(this.tax);
+  }
+
+  /**
+   * Check if total label is visible
+   */
+  async isTotalLabelVisible(): Promise<boolean> {
+    const totalLabel = this.page.locator('[data-test="total-label"]');
+    return await this.isElementVisible(totalLabel);
+  }
+
+  /**
+   * Check if finish button is visible
+   */
+  async isFinishButtonVisible(): Promise<boolean> {
+    return await this.isElementVisible(this.finishButton);
+  }
+
+  /**
+   * Get finish button text
+   */
+  async getFinishButtonText(): Promise<string | null> {
+    return await this.finishButton.textContent();
+  }
+
+  /**
+   * Check if cancel button is visible
+   */
+  async isCancelButtonVisible(): Promise<boolean> {
+    return await this.isElementVisible(this.cancelButton);
+  }
+
+  /**
+   * Check if finish button is enabled
+   */
+  async isFinishButtonEnabled(): Promise<boolean> {
+    return await this.finishButton.isEnabled();
+  }
+
+  /**
+   * Check if cancel button is enabled
+   */
+  async isCancelButtonEnabled(): Promise<boolean> {
+    return await this.cancelButton.isEnabled();
+  }
+
+  /**
+   * Check if on overview page
+   */
+  async isOnOverviewPage(): Promise<boolean> {
+    return await this.isCheckoutStepTwoDisplayed();
+  }
 }

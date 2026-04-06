@@ -1,204 +1,149 @@
 // spec: specs/saucedemo-checkout-test-plan.md
 // Category: UI Elements and Form Visibility Tests
 
-import { authenticatedTest as test, expect } from '../fixtures';
+import { pageObjectTest as test, expect } from '../fixtures';
 
 const BASE_URL = 'https://www.saucedemo.com';
 
-/**
- * Helper function to navigate to checkout step one (assumes authenticated page)
- */
-async function navigateToCheckout(page: any) {
-  // Add an item to cart
-  await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
-  
-  // Navigate to checkout
-  await page.locator('[data-test="shopping-cart-link"]').click();
-  await page.locator('[data-test="checkout"]').click();
-  
-  await expect(page).toHaveURL(/.*checkout-step-one.html/);
-}
-
 test.describe('UI Elements and Form Visibility Tests', () => {
-  
-  test('Checkout step one form fields are properly labeled', async ({ authenticatedPage: page }) => {
+
+  test('Checkout step one form fields are properly labeled', async ({ pages }) => {
     // Step 1: Navigate to checkout step one
-    await navigateToCheckout(page);
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
+    await pages.inventory.goToCart();
+    await pages.cart.clickCheckout();
 
     // Step 2: Verify page heading
-    await expect(page.locator('text=Checkout: Your Information')).toBeVisible();
+    expect(await pages.checkoutStepOne.getPageTitle()).toBe('Checkout: Your Information');
 
     // Step 3: Verify all form fields are visible
-    const firstNameInput = page.locator('[data-test="firstName"]');
-    await expect(firstNameInput).toBeVisible();
-
-    const lastNameInput = page.locator('[data-test="lastName"]');
-    await expect(lastNameInput).toBeVisible();
-
-    const zipInput = page.locator('[data-test="postalCode"]');
-    await expect(zipInput).toBeVisible();
+    expect(await pages.checkoutStepOne.isFirstNameVisible()).toBe(true);
+    expect(await pages.checkoutStepOne.isLastNameVisible()).toBe(true);
+    expect(await pages.checkoutStepOne.isPostalCodeVisible()).toBe(true);
 
     // Step 4: Verify field labels are present
-    // Labels are typically associated with input fields via placeholder or aria-label
-    await expect(firstNameInput).toHaveAttribute('placeholder', /First Name/i);
-    await expect(lastNameInput).toHaveAttribute('placeholder', /Last Name/i);
-    await expect(zipInput).toHaveAttribute('placeholder', /Postal Code|Zip/i);
+    expect(await pages.checkoutStepOne.getFirstNamePlaceholder()).toMatch(/First Name/i);
+    expect(await pages.checkoutStepOne.getLastNamePlaceholder()).toMatch(/Last Name/i);
+    expect(await pages.checkoutStepOne.getPostalCodePlaceholder()).toMatch(/Postal Code|Zip/i);
   });
 
-  test('Error messages display correctly and are dismissible', async ({ authenticatedPage: page }) => {
+  test('Error messages display correctly and are dismissible', async ({ pages }) => {
     // Step 1: Navigate to checkout
-    await navigateToCheckout(page);
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
+    await pages.inventory.goToCart();
+    await pages.cart.clickCheckout();
 
     // Step 2: Click Continue without filling fields
-    await page.locator('[data-test="continue"]').click();
+    await pages.checkoutStepOne.clickContinue();
 
     // Step 3: Verify error notification appears
-    const errorNotification = page.locator('[data-test="error"]');
-    await expect(errorNotification).toBeVisible();
+    expect(await pages.checkoutStepOne.isErrorVisible()).toBe(true);
 
     // Step 4: Verify error message is displayed
-    await expect(page.locator('text=/Error.*First Name is required/i')).toBeVisible();
+    expect(await pages.checkoutStepOne.getErrorMessage()).toMatch(/Error.*First Name is required/i);
 
     // Step 5: Verify error styling (should be distinctive - typically red background)
-    const errorElement = page.locator('[data-test="error"]');
-    const computedStyle = await errorElement.evaluate((el: any) => {
-      return window.getComputedStyle(el);
-    });
-    // Just verify the element has computed style (is rendered)
-    expect(computedStyle).toBeTruthy();
+    expect(await pages.checkoutStepOne.isErrorVisible()).toBe(true);
 
     // Step 6: Verify close button (X) is visible
-    const closeBtn = page.locator('[data-test="error-button"]');
-    await expect(closeBtn).toBeVisible();
+    expect(await pages.checkoutStepOne.isErrorCloseButtonVisible()).toBe(true);
 
     // Step 7: Click close button to dismiss error
-    await closeBtn.click();
+    await pages.checkoutStepOne.clickErrorCloseButton();
 
     // Step 8: Verify error notification disappears
-    await expect(errorNotification).not.toBeVisible({ timeout: 3000 }).catch(() => {});
+    expect(await pages.checkoutStepOne.isErrorVisible()).toBe(false);
 
     // Step 9: Verify form is still visible and ready for input
-    await expect(page.locator('[data-test="firstName"]')).toBeVisible();
+    expect(await pages.checkoutStepOne.isFirstNameVisible()).toBe(true);
   });
 
-  test('Buttons are functional and properly labeled', async ({ authenticatedPage: page }) => {
-    // Step 1: Add item
-    await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
-    await page.locator('[data-test="shopping-cart-link"]').click();
+  test('Buttons are functional and properly labeled', async ({ pages }) => {
+    // Step 1: Add item and go to cart
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
+    await pages.inventory.goToCart();
 
     // Step 2: Verify buttons on cart page
-    const checkoutBtn = page.locator('[data-test="checkout"]');
-    await expect(checkoutBtn).toBeVisible();
-    expect(await checkoutBtn.textContent()).toContain('Checkout');
+    expect(await pages.cart.isCheckoutButtonVisible()).toBe(true);
+    expect(await pages.cart.getCheckoutButtonText()).toContain('Checkout');
 
     // Step 3: Navigate to checkout step one
-    await checkoutBtn.click();
-    await expect(page).toHaveURL(/.*checkout-step-one.html/);
+    await pages.cart.clickCheckout();
 
     // Step 4: Verify buttons on step one
-    const continueBtn = page.locator('[data-test="continue"]');
-    await expect(continueBtn).toBeVisible();
-    // Button text might be in a child element or use getAttribute
-    const btnText = await continueBtn.getAttribute('value');
-    if (btnText) {
-      expect(btnText).toContain('Continue');
-    } else {
-      // Verify button is visible and clickable instead
-      await expect(continueBtn).toBeEnabled();
-    }
-
-    const cancelBtn = page.locator('[data-test="cancel"]');
-    await expect(cancelBtn).toBeVisible();
-    expect(await cancelBtn.textContent()).toContain('Cancel');
+    expect(await pages.checkoutStepOne.isContinueButtonVisible()).toBe(true);
+    expect(await pages.checkoutStepOne.isCancelButtonVisible()).toBe(true);
 
     // Step 5: Verify buttons are clickable
-    await expect(continueBtn).toBeEnabled();
-    await expect(cancelBtn).toBeEnabled();
+    expect(await pages.checkoutStepOne.isContinueButtonEnabled()).toBe(true);
+    expect(await pages.checkoutStepOne.isCancelButtonEnabled()).toBe(true);
 
     // Step 6: Fill form and navigate to step two
-    await page.locator('[data-test="firstName"]').fill('Test');
-    await page.locator('[data-test="lastName"]').fill('User');
-    await page.locator('[data-test="postalCode"]').fill('12345');
-    await continueBtn.click();
-
-    await expect(page).toHaveURL(/.*checkout-step-two.html/);
+    await pages.checkoutStepOne.fillCustomerInfo('Test', 'User', '12345');
+    await pages.checkoutStepOne.clickContinue();
 
     // Step 7: Verify buttons on step two
-    const finishBtn = page.locator('[data-test="finish"]');
-    await expect(finishBtn).toBeVisible();
-    expect(await finishBtn.textContent()).toContain('Finish');
-
-    const cancelBtn2 = page.locator('[data-test="cancel"]');
-    await expect(cancelBtn2).toBeVisible();
+    expect(await pages.checkoutStepTwo.isFinishButtonVisible()).toBe(true);
+    expect(await pages.checkoutStepTwo.getFinishButtonText()).toContain('Finish');
+    expect(await pages.checkoutStepTwo.isCancelButtonVisible()).toBe(true);
 
     // Step 8: Verify buttons are clickable
-    await expect(finishBtn).toBeEnabled();
-    await expect(cancelBtn2).toBeEnabled();
+    expect(await pages.checkoutStepTwo.isFinishButtonEnabled()).toBe(true);
+    expect(await pages.checkoutStepTwo.isCancelButtonEnabled()).toBe(true);
   });
 
-  test('Cart item cards display all required information', async ({ authenticatedPage: page }) => {
+  test('Cart item cards display all required information', async ({ pages }) => {
     // Step 1: Add items
-    await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
-    await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
+    await pages.inventory.addProductToCart('sauce-labs-bike-light');
 
     // Step 2: Navigate to cart
-    await page.locator('[data-test="shopping-cart-link"]').click();
-    await expect(page).toHaveURL(/.*cart.html/);
+    await pages.inventory.goToCart();
 
     // Step 3: Verify items are displayed with product names
-    await expect(page.locator('text=Sauce Labs Backpack')).toBeVisible();
-    await expect(page.locator('text=Sauce Labs Bike Light')).toBeVisible();
+    expect(await pages.cart.isItemVisible('Sauce Labs Backpack')).toBe(true);
+    expect(await pages.cart.isItemVisible('Sauce Labs Bike Light')).toBe(true);
 
     // Step 4: Verify product names are clickable links
-    const backpackLink = page.locator('a:has-text("Sauce Labs Backpack")');
-    await expect(backpackLink).toBeVisible();
+    expect(await pages.cart.isItemLinkVisible('Sauce Labs Backpack')).toBe(true);
 
     // Step 5: Verify prices are displayed
-    await expect(page.locator('text=$29.99')).toBeVisible(); // Backpack price
-    await expect(page.locator('text=$9.99')).toBeVisible(); // Bike Light price
+    expect(await pages.cart.getItemPrice('sauce-labs-backpack')).toBe('$29.99');
+    expect(await pages.cart.getItemPrice('sauce-labs-bike-light')).toBe('$9.99');
 
     // Step 6: Verify Remove buttons are available
-    const removeButtons = page.locator('[data-test*="remove"]');
-    const removeButtonCount = await removeButtons.count();
-    expect(removeButtonCount).toBeGreaterThanOrEqual(2);
+    expect(await pages.cart.getRemoveButtonCount()).toBeGreaterThanOrEqual(2);
 
     // Step 7: Verify quantities are displayed
-    const qtyHeaders = page.locator('text=QTY');
-    await expect(qtyHeaders).toBeVisible();
+    expect(await pages.cart.isQuantityHeaderVisible()).toBe(true);
   });
 
-  test('Order overview table structure is clear and readable', async ({ authenticatedPage: page }) => {
+  test('Order overview table structure is clear and readable', async ({ pages }) => {
     // Step 1: Complete checkout step one
-    await navigateToCheckout(page);
-
-    // Fill and submit step one
-    await page.locator('[data-test="firstName"]').fill('John');
-    await page.locator('[data-test="lastName"]').fill('Doe');
-    await page.locator('[data-test="postalCode"]').fill('12345');
-    
-    await page.locator('[data-test="continue"]').click();
+    await pages.inventory.addProductToCart('sauce-labs-backpack');
+    await pages.inventory.goToCart();
+    await pages.cart.clickCheckout();
+    await pages.checkoutStepOne.fillCustomerInfo('John', 'Doe', '12345');
+    await pages.checkoutStepOne.clickContinue();
 
     // Step 2: Verify on overview (step two)
-    await expect(page).toHaveURL(/.*checkout-step-two.html/);
-    await expect(page.locator('text=Checkout: Overview')).toBeVisible();
+    expect(await pages.checkoutStepTwo.getPageTitle()).toBe('Checkout: Overview');
 
     // Step 3: Verify table has proper structure
-    const qtyHeaders = page.locator('text=QTY');
-    await expect(qtyHeaders).toBeVisible();
-
-    const descriptionHeaders = page.locator('text=Description');
-    await expect(descriptionHeaders).toBeVisible();
+    expect(await pages.checkoutStepTwo.isQuantityHeaderVisible()).toBe(true);
+    expect(await pages.checkoutStepTwo.isDescriptionHeaderVisible()).toBe(true);
 
     // Step 4: Verify price summary section
-    await expect(page.locator('text=Item total:')).toBeVisible();
-    await expect(page.locator('text=Tax:')).toBeVisible();
-    await expect(page.locator('[data-test="total-label"]')).toBeVisible();
+    expect(await pages.checkoutStepTwo.isItemTotalVisible()).toBe(true);
+    expect(await pages.checkoutStepTwo.isTaxVisible()).toBe(true);
+    expect(await pages.checkoutStepTwo.isTotalLabelVisible()).toBe(true);
 
     // Step 5: Verify items are displayed in a clear structure
-    await expect(page.locator('text=Sauce Labs Backpack')).toBeVisible();
+    expect(await pages.checkoutStepTwo.isItemInOrderSummary('Sauce Labs Backpack')).toBe(true);
 
     // Step 6: Verify payment and shipping info
-    await expect(page.locator('text=Payment Information:')).toBeVisible();
-    await expect(page.locator('text=Shipping Information:')).toBeVisible();
+    expect(await pages.checkoutStepTwo.isPaymentInfoVisible()).toBe(true);
+    expect(await pages.checkoutStepTwo.isShippingInfoVisible()).toBe(true);
   });
+
 });

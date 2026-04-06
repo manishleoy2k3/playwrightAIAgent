@@ -75,9 +75,58 @@ export class CheckoutCompletePage extends BasePage {
   }
 
   /**
-   * Get order dispatched message text
+   * Get page title
    */
-  async getOrderDispatchedMessage(): Promise<string> {
-    return await this.getText(this.orderDispatchedMessage);
+  async getPageTitle(): Promise<string> {
+    return await this.getText(this.pageTitle);
   }
-}
+
+  /**
+   * Check if back to products button is visible
+   */
+  async isBackToProductsButtonVisible(): Promise<boolean> {
+    return await this.isElementVisible(this.backToProductsButton);
+  }
+
+  /**
+   * Check if back to products button is enabled
+   */
+  async isBackToProductsButtonEnabled(): Promise<boolean> {
+    return await this.backToProductsButton.isEnabled();
+  }
+
+  /**
+   * Check if on complete page
+   */
+  async isOnCompletePage(): Promise<boolean> {
+    return await this.isCheckoutCompleteDisplayed();
+  }
+
+  /**
+   * Get current URL
+   */
+  async getCurrentURL(): Promise<string> {
+    return this.page.url();
+  }
+
+  /**
+   * Check if page heading is visible
+   */
+  async isPageHeadingVisible(): Promise<boolean> {
+    return await this.isElementVisible(this.pageTitle);
+  }
+
+  /**
+   * Check if pony express image is visible (checkmark icon)
+   */
+  async isPonyExpressImageVisible(): Promise<boolean> {
+    return await this.isCheckmarkIconVisible();
+  }
+
+  /**
+   * Check if order dispatched message contains "pony"
+   */
+  async isPonyExpressMessageVisible(): Promise<boolean> {
+    const message = await this.getOrderDispatchedMessage();
+    return message.toLowerCase().includes('pony');
+  }

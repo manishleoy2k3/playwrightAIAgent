@@ -1,6 +1,6 @@
 /**
  * Shared Test Fixtures and Utilities
- * 
+ *
  * Provides reusable authenticated contexts and helper functions
  * to avoid repeating login logic across multiple test suites
  */
@@ -47,42 +47,9 @@ export const TEST_USERS = {
 };
 
 /**
- * Custom fixture that provides authenticated page context
- * Usage:
- *   test('my test', async ({ authenticatedPage }) => {
- *     // authenticatedPage is already logged in, ready to use
- *   });
- */
-export const authenticatedTest = base.extend<{
-  authenticatedPage: Page;
-}>({
-  authenticatedPage: async ({ page }, use) => {
-    // If storageState is configured, page will be pre-authenticated
-    // Otherwise, perform manual login
-    
-    // Check if we're already authenticated (storageState loaded)
-    await page.goto(BASE_URL);
-    
-    const isAuthenticated = await checkIfAuthenticated(page);
-    
-    if (!isAuthenticated) {
-      console.log('⚠️  Not authenticated via storageState, performing manual login...');
-      console.log('💡 Tip: Run "npx playwright test auth-setup.ts" to enable storageState');
-      
-      // Manual login as fallback
-      await performLogin(page, TEST_USERS.standard);
-    } else {
-      console.log('✅ Using pre-authenticated session (storageState)');
-    }
-    
-    await use(page);
-  },
-});
-
-/**
  * Page Object Test - Provides page object instances for reusable test code
  * Usage:
- *   test('my test', async ({ authenticatedPage, pages }) => {
+ *   test('my test', async ({ pages }) => {
  *     await pages.inventory.addProductToCart('sauce-labs-backpack');
  *   });
  */
@@ -97,31 +64,30 @@ export interface PageObjects {
 }
 
 export const pageObjectTest = base.extend<{
-  authenticatedPage: Page;
   pages: PageObjects;
 }>({
-  authenticatedPage: async ({ page }, use) => {
-    // If storageState is configured, page will be pre-authenticated
+  pages: async ({ page }, use) => {
+    // Authenticate using storageState if available, otherwise manual login
     await page.goto(BASE_URL);
-    
-    const isAuthenticated = await checkIfAuthenticated(page);
-    
-    if (!isAuthenticated) {
-      await performLogin(page, TEST_USERS.standard);
-    }
-    
-    await use(page);
-  },
 
-  pages: async ({ authenticatedPage }, use) => {
+    const isAuthenticated = await checkIfAuthenticated(page);
+
+    if (!isAuthenticated) {
+      console.log('⚠️  Not authenticated via storageState, performing manual login...');
+      console.log('💡 Tip: Run "npx playwright test auth-setup.ts" to enable storageState');
+      await performLogin(page, TEST_USERS.standard);
+    } else {
+      console.log('✅ Using pre-authenticated session (storageState)');
+    }
+
     const pageObjects: PageObjects = {
-      base: new BasePage(authenticatedPage),
-      login: new LoginPage(authenticatedPage),
-      inventory: new InventoryPage(authenticatedPage),
-      cart: new CartPage(authenticatedPage),
-      checkoutStepOne: new CheckoutStepOnePage(authenticatedPage),
-      checkoutStepTwo: new CheckoutStepTwoPage(authenticatedPage),
-      checkoutComplete: new CheckoutCompletePage(authenticatedPage),
+      base: new BasePage(page),
+      login: new LoginPage(page),
+      inventory: new InventoryPage(page),
+      cart: new CartPage(page),
+      checkoutStepOne: new CheckoutStepOnePage(page),
+      checkoutStepTwo: new CheckoutStepTwoPage(page),
+      checkoutComplete: new CheckoutCompletePage(page),
     };
 
     await use(pageObjects);

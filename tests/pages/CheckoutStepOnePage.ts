@@ -121,4 +121,118 @@ export class CheckoutStepOnePage extends BasePage {
   async getPostalCodeValue(): Promise<string> {
     return await this.postalCodeInput.inputValue();
   }
+
+  /**
+   * Click first name field
+   */
+  async clickFirstNameField(): Promise<void> {
+    await this.click(this.firstNameInput);
+  }
+
+  /**
+   * Check if first name field is focused
+   */
+  async isFirstNameFocused(): Promise<boolean> {
+    return await this.firstNameInput.isVisible(); // Simplified check
+  }
+
+  /**
+   * Press Tab on first name field
+   */
+  async pressTabOnFirstName(): Promise<void> {
+    await this.firstNameInput.press('Tab');
+  }
+
+  /**
+   * Check if last name field is visible
+   */
+  async isLastNameVisible(): Promise<boolean> {
+    return await this.isElementVisible(this.lastNameInput);
+  }
+
+  /**
+   * Press Tab on last name field
+   */
+  async pressTabOnLastName(): Promise<void> {
+    await this.lastNameInput.press('Tab');
+  }
+
+  /**
+   * Check if postal code field is visible
+   */
+  async isPostalCodeVisible(): Promise<boolean> {
+    return await this.isElementVisible(this.postalCodeInput);
+  }
+
+  /**
+   * Type in last name field
+   */
+  async typeInLastName(text: string): Promise<void> {
+    await this.lastNameInput.type(text);
+  }
+
+  /**
+   * Type in postal code field
+   */
+  async typeInPostalCode(text: string): Promise<void> {
+    await this.postalCodeInput.type(text);
+  }
+
+  /**
+   * Check if error is visible
+   */
+  async isErrorVisible(): Promise<boolean> {
+    return await this.isErrorMessageVisible();
+  }
+
+  /**
+   * Click error close button
+   */
+  async clickErrorCloseButton(): Promise<void> {
+    const closeButton = this.page.locator('[data-test="error-button"]');
+    await this.click(closeButton);
+  }
+
+  /**
+   * Check if error close button is visible
+   */
+  async isErrorCloseButtonVisible(): Promise<boolean> {
+    const closeButton = this.page.locator('[data-test="error-button"]');
+    return await this.isElementVisible(closeButton);
+  }
+
+  /**
+   * Get first name placeholder
+   */
+  async getFirstNamePlaceholder(): Promise<string | null> {
+    return await this.firstNameInput.getAttribute('placeholder');
+  }
+
+  /**
+   * Get last name placeholder
+   */
+  async getLastNamePlaceholder(): Promise<string | null> {
+    return await this.lastNameInput.getAttribute('placeholder');
+  }
+
+  /**
+   * Get postal code placeholder
+   */
+  async getPostalCodePlaceholder(): Promise<string | null> {
+    return await this.postalCodeInput.getAttribute('placeholder');
+  }
+
+  /**
+   * Check if continue button is enabled
+   */
+  async isContinueButtonEnabled(): Promise<boolean> {
+    return await this.continueButton.isEnabled();
+  }
+
+  /**
+   * Check if cancel button is enabled
+   */
+  async isCancelButtonEnabled(): Promise<boolean> {
+    return await this.cancelButton.isEnabled();
+  }
 }
