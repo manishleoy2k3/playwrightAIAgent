@@ -1,25 +1,14 @@
 // spec: specs/saucedemo-checkout-test-plan.md
 // Category: Checkout Form Validation - Missing Fields
 
-import { test, expect } from '@playwright/test';
+import { authenticatedTest as test, expect } from '../fixtures';
 
 const BASE_URL = 'https://www.saucedemo.com';
-const CREDENTIALS = {
-  username: 'standard_user',
-  password: 'secret_sauce'
-};
 
 /**
- * Helper function to login and navigate to checkout step one
+ * Helper function to navigate to checkout step one (assumes authenticated page)
  */
-async function loginAndNavigateToCheckout(page: any) {
-  await page.goto(BASE_URL);
-  await page.locator('[data-test="username"]').fill(CREDENTIALS.username);
-  await page.locator('[data-test="password"]').fill(CREDENTIALS.password);
-  await page.locator('[data-test="login-button"]').click();
-  
-  await expect(page).toHaveURL(/.*inventory.html/);
-  
+async function navigateToCheckout(page: any) {
   // Add an item to cart
   await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
   
@@ -33,9 +22,9 @@ async function loginAndNavigateToCheckout(page: any) {
 
 test.describe('Checkout Form Validation - Missing Fields', () => {
   
-  test('Validation error when all fields are empty', async ({ page }) => {
-    // Step 1: Login and navigate to checkout step one
-    await loginAndNavigateToCheckout(page);
+  test('Validation error when all fields are empty', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout step one
+    await navigateToCheckout(page);
 
     // Step 2: Click Continue without filling any fields
     await page.locator('[data-test="continue"]').click();
@@ -59,9 +48,9 @@ test.describe('Checkout Form Validation - Missing Fields', () => {
     await expect(errorMessage).not.toBeVisible({ timeout: 3000 }).catch(() => {});
   });
 
-  test('Validation error when first name is empty', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Validation error when first name is empty', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Leave First Name empty, fill Last Name and Zip
     await page.locator('[data-test="lastName"]').fill('Smith');
@@ -81,9 +70,9 @@ test.describe('Checkout Form Validation - Missing Fields', () => {
     await expect(page.locator('[data-test="postalCode"]')).toHaveValue('12345');
   });
 
-  test('Validation error when last name is empty', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Validation error when last name is empty', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Fill First Name and Zip, leave Last Name empty
     await page.locator('[data-test="firstName"]').fill('John');
@@ -99,9 +88,9 @@ test.describe('Checkout Form Validation - Missing Fields', () => {
     await expect(page).toHaveURL(/.*checkout-step-one.html/);
   });
 
-  test('Validation error when postal code is empty', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Validation error when postal code is empty', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Fill First Name and Last Name, leave Zip empty
     await page.locator('[data-test="firstName"]').fill('John');
@@ -117,9 +106,9 @@ test.describe('Checkout Form Validation - Missing Fields', () => {
     await expect(page).toHaveURL(/.*checkout-step-one.html/);
   });
 
-  test('Validation error when only first name is filled', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Validation error when only first name is filled', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Enter only First Name
     await page.locator('[data-test="firstName"]').fill('John');

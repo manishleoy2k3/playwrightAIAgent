@@ -1,0 +1,1890 @@
+<testsuites id="" name="" tests="200" failures="0" skipped="148" errors="52" time="24.352393">
+<testsuite name="01-happy-path.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="chromium" tests="3" failures="0" skipped="0" time="0.01" errors="3">
+<testcase name="Checkout Happy Path - Successful Order Completion › Complete successful checkout with 2 items" classname="01-happy-path.spec.ts" time="0.004">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|01-happy-path-Checkout-Hap-c4981-ssful-checkout-with-2-items-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 01-happy-path.spec.ts:10:7 › Checkout Happy Path - Successful Order Completion › Complete successful checkout with 2 items 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\01-happy-path-Checkout-Hap-c4981-ssful-checkout-with-2-items-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Happy Path - Successful Order Completion › Complete checkout with multiple items (4+)" classname="01-happy-path.spec.ts" time="0.003">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|01-happy-path-Checkout-Hap-ee9ac-kout-with-multiple-items-4--chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 01-happy-path.spec.ts:105:7 › Checkout Happy Path - Successful Order Completion › Complete checkout with multiple items (4+) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\01-happy-path-Checkout-Hap-ee9ac-kout-with-multiple-items-4--chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Happy Path - Successful Order Completion › Successful order and back home navigation clears cart" classname="01-happy-path.spec.ts" time="0.003">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|01-happy-path-Checkout-Hap-0e9ef-home-navigation-clears-cart-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 01-happy-path.spec.ts:161:7 › Checkout Happy Path - Successful Order Completion › Successful order and back home navigation clears cart 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\01-happy-path-Checkout-Hap-0e9ef-home-navigation-clears-cart-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="02-form-validation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="chromium" tests="5" failures="0" skipped="0" time="0.022" errors="5">
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when all fields are empty" classname="02-form-validation.spec.ts" time="0.003">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|02-form-validation-Checkou-f2736-r-when-all-fields-are-empty-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 02-form-validation.spec.ts:25:7 › Checkout Form Validation - Missing Fields › Validation error when all fields are empty 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\02-form-validation-Checkou-f2736-r-when-all-fields-are-empty-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when first name is empty" classname="02-form-validation.spec.ts" time="0.01">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|02-form-validation-Checkou-f4404-or-when-first-name-is-empty-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 02-form-validation.spec.ts:51:7 › Checkout Form Validation - Missing Fields › Validation error when first name is empty 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\02-form-validation-Checkou-f4404-or-when-first-name-is-empty-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when last name is empty" classname="02-form-validation.spec.ts" time="0.003">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|02-form-validation-Checkou-fa3c8-ror-when-last-name-is-empty-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 02-form-validation.spec.ts:73:7 › Checkout Form Validation - Missing Fields › Validation error when last name is empty 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\02-form-validation-Checkou-fa3c8-ror-when-last-name-is-empty-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when postal code is empty" classname="02-form-validation.spec.ts" time="0.003">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|02-form-validation-Checkou-3e3ea-r-when-postal-code-is-empty-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 02-form-validation.spec.ts:91:7 › Checkout Form Validation - Missing Fields › Validation error when postal code is empty 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\02-form-validation-Checkou-3e3ea-r-when-postal-code-is-empty-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when only first name is filled" classname="02-form-validation.spec.ts" time="0.003">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|02-form-validation-Checkou-b395e-n-only-first-name-is-filled-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 02-form-validation.spec.ts:109:7 › Checkout Form Validation - Missing Fields › Validation error when only first name is filled 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\02-form-validation-Checkou-b395e-n-only-first-name-is-filled-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="03-form-invalid-data.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="chromium" tests="4" failures="0" skipped="0" time="0.018" errors="4">
+<testcase name="Checkout Form Validation - Invalid Input Data › Special characters in name fields are accepted" classname="03-form-invalid-data.spec.ts" time="0.004">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|03-form-invalid-data-Check-aa8e7-in-name-fields-are-accepted-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 03-form-invalid-data.spec.ts:24:7 › Checkout Form Validation - Invalid Input Data › Special characters in name fields are accepted 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\03-form-invalid-data-Check-aa8e7-in-name-fields-are-accepted-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Numeric values in name fields are accepted" classname="03-form-invalid-data.spec.ts" time="0.004">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|03-form-invalid-data-Check-506b3-in-name-fields-are-accepted-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 03-form-invalid-data.spec.ts:45:7 › Checkout Form Validation - Invalid Input Data › Numeric values in name fields are accepted 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\03-form-invalid-data-Check-506b3-in-name-fields-are-accepted-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Special characters in postal code are accepted" classname="03-form-invalid-data.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|03-form-invalid-data-Check-1d0a7-in-postal-code-are-accepted-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 03-form-invalid-data.spec.ts:65:7 › Checkout Form Validation - Invalid Input Data › Special characters in postal code are accepted 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\03-form-invalid-data-Check-1d0a7-in-postal-code-are-accepted-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Whitespace-only input in name fields handling" classname="03-form-invalid-data.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|03-form-invalid-data-Check-f055e-put-in-name-fields-handling-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 03-form-invalid-data.spec.ts:81:7 › Checkout Form Validation - Invalid Input Data › Whitespace-only input in name fields handling 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\03-form-invalid-data-Check-f055e-put-in-name-fields-handling-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="04-edge-cases.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="chromium" tests="4" failures="0" skipped="0" time="0.017" errors="4">
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Very long text input (50+ characters) in first and last name fields" classname="04-edge-cases.spec.ts" time="0.003">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|04-edge-cases-Checkout-For-ed3d9--first-and-last-name-fields-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 04-edge-cases.spec.ts:24:7 › Checkout Form Edge Cases - Long and Extreme Inputs › Very long text input (50+ characters) in first and last name fields 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\04-edge-cases-Checkout-For-ed3d9--first-and-last-name-fields-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Maximum length input testing (255+ characters)" classname="04-edge-cases.spec.ts" time="0.003">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|04-edge-cases-Checkout-For-80238-put-testing-255-characters--chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 04-edge-cases.spec.ts:49:7 › Checkout Form Edge Cases - Long and Extreme Inputs › Maximum length input testing (255+ characters) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\04-edge-cases-Checkout-For-80238-put-testing-255-characters--chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › International characters (Unicode) in name fields" classname="04-edge-cases.spec.ts" time="0.007">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|04-edge-cases-Checkout-For-18308-ters-Unicode-in-name-fields-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 04-edge-cases.spec.ts:71:7 › Checkout Form Edge Cases - Long and Extreme Inputs › International characters (Unicode) in name fields 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\04-edge-cases-Checkout-For-18308-ters-Unicode-in-name-fields-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Leading and trailing spaces in form fields" classname="04-edge-cases.spec.ts" time="0.004">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|04-edge-cases-Checkout-For-7d699-iling-spaces-in-form-fields-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 04-edge-cases.spec.ts:91:7 › Checkout Form Edge Cases - Long and Extreme Inputs › Leading and trailing spaces in form fields 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\04-edge-cases-Checkout-For-7d699-iling-spaces-in-form-fields-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="05-navigation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="chromium" tests="5" failures="0" skipped="0" time="0.02" errors="5">
+<testcase name="Navigation and Cart Persistence Tests › Cancel button on checkout step one returns to cart with items intact" classname="05-navigation.spec.ts" time="0.003">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|05-navigation-Navigation-a-047a3-s-to-cart-with-items-intact-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 05-navigation.spec.ts:10:7 › Navigation and Cart Persistence Tests › Cancel button on checkout step one returns to cart with items intact 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\05-navigation-Navigation-a-047a3-s-to-cart-with-items-intact-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Cancel button on checkout step two returns to cart with items intact" classname="05-navigation.spec.ts" time="0.003">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|05-navigation-Navigation-a-ea96a-s-to-cart-with-items-intact-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 05-navigation.spec.ts:42:7 › Navigation and Cart Persistence Tests › Cancel button on checkout step two returns to cart with items intact 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\05-navigation-Navigation-a-ea96a-s-to-cart-with-items-intact-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Back/Continue Shopping button from cart returns to products page" classname="05-navigation.spec.ts" time="0.004">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|05-navigation-Navigation-a-25cb1-rt-returns-to-products-page-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 05-navigation.spec.ts:79:7 › Navigation and Cart Persistence Tests › Back/Continue Shopping button from cart returns to products page 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\05-navigation-Navigation-a-25cb1-rt-returns-to-products-page-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Sequential navigation through complete checkout workflow" classname="05-navigation.spec.ts" time="0.004">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|05-navigation-Navigation-a-9e085--complete-checkout-workflow-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 05-navigation.spec.ts:117:7 › Navigation and Cart Persistence Tests › Sequential navigation through complete checkout workflow 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\05-navigation-Navigation-a-9e085--complete-checkout-workflow-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Back Home from completion page resets cart" classname="05-navigation.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|05-navigation-Navigation-a-610b8-completion-page-resets-cart-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 05-navigation.spec.ts:155:7 › Navigation and Cart Persistence Tests › Back Home from completion page resets cart 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\05-navigation-Navigation-a-610b8-completion-page-resets-cart-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="06-order-overview.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="chromium" tests="4" failures="0" skipped="0" time="0.027" errors="4">
+<testcase name="Order Overview and Price Calculation Tests › Verify correct price calculations with 2 items" classname="06-order-overview.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|06-order-overview-Order-Ov-6a8ac-e-calculations-with-2-items-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 06-order-overview.spec.ts:34:7 › Order Overview and Price Calculation Tests › Verify correct price calculations with 2 items 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\06-order-overview-Order-Ov-6a8ac-e-calculations-with-2-items-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Verify correct price calculations with multiple items (4+)" classname="06-order-overview.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|06-order-overview-Order-Ov-f99c1-ions-with-multiple-items-4--chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 06-order-overview.spec.ts:58:7 › Order Overview and Price Calculation Tests › Verify correct price calculations with multiple items (4+) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\06-order-overview-Order-Ov-f99c1-ions-with-multiple-items-4--chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Verify order overview displays correct payment and shipping info" classname="06-order-overview.spec.ts" time="0.008">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|06-order-overview-Order-Ov-a87ee-t-payment-and-shipping-info-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 06-order-overview.spec.ts:86:7 › Order Overview and Price Calculation Tests › Verify order overview displays correct payment and shipping info 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\06-order-overview-Order-Ov-a87ee-t-payment-and-shipping-info-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Order overview displays complete item details" classname="06-order-overview.spec.ts" time="0.009">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|06-order-overview-Order-Ov-d4594-plays-complete-item-details-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 06-order-overview.spec.ts:103:7 › Order Overview and Price Calculation Tests › Order overview displays complete item details 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\06-order-overview-Order-Ov-d4594-plays-complete-item-details-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="07-ui-validation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="chromium" tests="5" failures="0" skipped="0" time="0.04" errors="5">
+<testcase name="UI Elements and Form Visibility Tests › Checkout step one form fields are properly labeled" classname="07-ui-validation.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|07-ui-validation-UI-Elemen-001bd-fields-are-properly-labeled-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 07-ui-validation.spec.ts:24:7 › UI Elements and Form Visibility Tests › Checkout step one form fields are properly labeled 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\07-ui-validation-UI-Elemen-001bd-fields-are-properly-labeled-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Error messages display correctly and are dismissible" classname="07-ui-validation.spec.ts" time="0.014">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|07-ui-validation-UI-Elemen-589b9-rrectly-and-are-dismissible-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 07-ui-validation.spec.ts:48:7 › UI Elements and Form Visibility Tests › Error messages display correctly and are dismissible 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\07-ui-validation-UI-Elemen-589b9-rrectly-and-are-dismissible-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Buttons are functional and properly labeled" classname="07-ui-validation.spec.ts" time="0.007">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|07-ui-validation-UI-Elemen-00738-tional-and-properly-labeled-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 07-ui-validation.spec.ts:84:7 › UI Elements and Form Visibility Tests › Buttons are functional and properly labeled 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\07-ui-validation-UI-Elemen-00738-tional-and-properly-labeled-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Cart item cards display all required information" classname="07-ui-validation.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|07-ui-validation-UI-Elemen-f7001-ay-all-required-information-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 07-ui-validation.spec.ts:139:7 › UI Elements and Form Visibility Tests › Cart item cards display all required information 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\07-ui-validation-UI-Elemen-f7001-ay-all-required-information-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Order overview table structure is clear and readable" classname="07-ui-validation.spec.ts" time="0.007">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|07-ui-validation-UI-Elemen-61e4e-cture-is-clear-and-readable-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 07-ui-validation.spec.ts:170:7 › UI Elements and Form Visibility Tests › Order overview table structure is clear and readable 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\07-ui-validation-UI-Elemen-61e4e-cture-is-clear-and-readable-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="08-cart-review.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="chromium" tests="4" failures="0" skipped="0" time="0.022" errors="4">
+<testcase name="Cart Review and Product Details Tests › Cart displays correct item quantities and totals" classname="08-cart-review.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|08-cart-review-Cart-Review-05d0a--item-quantities-and-totals-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 08-cart-review.spec.ts:10:7 › Cart Review and Product Details Tests › Cart displays correct item quantities and totals 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\08-cart-review-Cart-Review-05d0a--item-quantities-and-totals-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Remove button removes items from cart individually" classname="08-cart-review.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|08-cart-review-Cart-Review-6cf27-tems-from-cart-individually-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 08-cart-review.spec.ts:41:7 › Cart Review and Product Details Tests › Remove button removes items from cart individually 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\08-cart-review-Cart-Review-6cf27-tems-from-cart-individually-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Cart displays product descriptions and links" classname="08-cart-review.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|08-cart-review-Cart-Review-3af83-duct-descriptions-and-links-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 08-cart-review.spec.ts:80:7 › Cart Review and Product Details Tests › Cart displays product descriptions and links 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\08-cart-review-Cart-Review-3af83-duct-descriptions-and-links-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Cart navigation options are available and functional" classname="08-cart-review.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|08-cart-review-Cart-Review-0d1d3-re-available-and-functional-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 08-cart-review.spec.ts:104:7 › Cart Review and Product Details Tests › Cart navigation options are available and functional 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\08-cart-review-Cart-Review-0d1d3-re-available-and-functional-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="09-negative-scenarios.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="chromium" tests="3" failures="0" skipped="0" time="0.023" errors="3">
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Cannot proceed with form containing only whitespace" classname="09-negative-scenarios.spec.ts" time="0.007">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|09-negative-scenarios-Nega-257e0--containing-only-whitespace-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 09-negative-scenarios.spec.ts:24:7 › Negative Scenarios - Form Submission Edge Cases › Cannot proceed with form containing only whitespace 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\09-negative-scenarios-Nega-257e0--containing-only-whitespace-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Tab order and form navigation using keyboard" classname="09-negative-scenarios.spec.ts" time="0.01">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|09-negative-scenarios-Nega-999b3-m-navigation-using-keyboard-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 09-negative-scenarios.spec.ts:53:7 › Negative Scenarios - Form Submission Edge Cases › Tab order and form navigation using keyboard 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\09-negative-scenarios-Nega-999b3-m-navigation-using-keyboard-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Form field input constraints and max length behavior" classname="09-negative-scenarios.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|09-negative-scenarios-Nega-97a9f-nts-and-max-length-behavior-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 09-negative-scenarios.spec.ts:92:7 › Negative Scenarios - Form Submission Edge Cases › Form field input constraints and max length behavior 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\09-negative-scenarios-Nega-97a9f-nts-and-max-length-behavior-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="10-order-completion.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="chromium" tests="3" failures="0" skipped="0" time="0.02" errors="3">
+<testcase name="Order Completion and Confirmation Tests › Order confirmation page displays all required elements" classname="10-order-completion.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|10-order-completion-Order--71d44-plays-all-required-elements-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 10-order-completion.spec.ts:35:7 › Order Completion and Confirmation Tests › Order confirmation page displays all required elements 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\10-order-completion-Order--71d44-plays-all-required-elements-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Order Completion and Confirmation Tests › Back Home button clears cart and returns to products page" classname="10-order-completion.spec.ts" time="0.008">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|10-order-completion-Order--4f9b6-nd-returns-to-products-page-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 10-order-completion.spec.ts:63:7 › Order Completion and Confirmation Tests › Back Home button clears cart and returns to products page 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\10-order-completion-Order--4f9b6-nd-returns-to-products-page-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Order Completion and Confirmation Tests › Order confirmation URL is correct" classname="10-order-completion.spec.ts" time="0.007">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|10-order-completion-Order--943f6-confirmation-URL-is-correct-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  [chromium] › 10-order-completion.spec.ts:96:7 › Order Completion and Confirmation Tests › Order confirmation URL is correct 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\10-order-completion-Order--943f6-confirmation-URL-is-correct-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="01-happy-path.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="firefox" tests="3" failures="0" skipped="0" time="0.018" errors="3">
+<testcase name="Checkout Happy Path - Successful Order Completion › Complete successful checkout with 2 items" classname="01-happy-path.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|01-happy-path-Checkout-Hap-c4981-ssful-checkout-with-2-items-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 01-happy-path.spec.ts:10:7 › Checkout Happy Path - Successful Order Completion › Complete successful checkout with 2 items 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\01-happy-path-Checkout-Hap-c4981-ssful-checkout-with-2-items-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Happy Path - Successful Order Completion › Complete checkout with multiple items (4+)" classname="01-happy-path.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|01-happy-path-Checkout-Hap-ee9ac-kout-with-multiple-items-4--firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 01-happy-path.spec.ts:105:7 › Checkout Happy Path - Successful Order Completion › Complete checkout with multiple items (4+) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\01-happy-path-Checkout-Hap-ee9ac-kout-with-multiple-items-4--firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Happy Path - Successful Order Completion › Successful order and back home navigation clears cart" classname="01-happy-path.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|01-happy-path-Checkout-Hap-0e9ef-home-navigation-clears-cart-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 01-happy-path.spec.ts:161:7 › Checkout Happy Path - Successful Order Completion › Successful order and back home navigation clears cart 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\01-happy-path-Checkout-Hap-0e9ef-home-navigation-clears-cart-firefox\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="02-form-validation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="firefox" tests="5" failures="0" skipped="0" time="0.027" errors="5">
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when all fields are empty" classname="02-form-validation.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|02-form-validation-Checkou-f2736-r-when-all-fields-are-empty-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 02-form-validation.spec.ts:25:7 › Checkout Form Validation - Missing Fields › Validation error when all fields are empty 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\02-form-validation-Checkou-f2736-r-when-all-fields-are-empty-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when first name is empty" classname="02-form-validation.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|02-form-validation-Checkou-f4404-or-when-first-name-is-empty-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 02-form-validation.spec.ts:51:7 › Checkout Form Validation - Missing Fields › Validation error when first name is empty 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\02-form-validation-Checkou-f4404-or-when-first-name-is-empty-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when last name is empty" classname="02-form-validation.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|02-form-validation-Checkou-fa3c8-ror-when-last-name-is-empty-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 02-form-validation.spec.ts:73:7 › Checkout Form Validation - Missing Fields › Validation error when last name is empty 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\02-form-validation-Checkou-fa3c8-ror-when-last-name-is-empty-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when postal code is empty" classname="02-form-validation.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|02-form-validation-Checkou-3e3ea-r-when-postal-code-is-empty-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 02-form-validation.spec.ts:91:7 › Checkout Form Validation - Missing Fields › Validation error when postal code is empty 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\02-form-validation-Checkou-3e3ea-r-when-postal-code-is-empty-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when only first name is filled" classname="02-form-validation.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|02-form-validation-Checkou-b395e-n-only-first-name-is-filled-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 02-form-validation.spec.ts:109:7 › Checkout Form Validation - Missing Fields › Validation error when only first name is filled 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\02-form-validation-Checkou-b395e-n-only-first-name-is-filled-firefox\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="03-form-invalid-data.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="firefox" tests="4" failures="0" skipped="0" time="0.026" errors="4">
+<testcase name="Checkout Form Validation - Invalid Input Data › Special characters in name fields are accepted" classname="03-form-invalid-data.spec.ts" time="0.009">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|03-form-invalid-data-Check-aa8e7-in-name-fields-are-accepted-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 03-form-invalid-data.spec.ts:24:7 › Checkout Form Validation - Invalid Input Data › Special characters in name fields are accepted 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\03-form-invalid-data-Check-aa8e7-in-name-fields-are-accepted-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Numeric values in name fields are accepted" classname="03-form-invalid-data.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|03-form-invalid-data-Check-506b3-in-name-fields-are-accepted-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 03-form-invalid-data.spec.ts:45:7 › Checkout Form Validation - Invalid Input Data › Numeric values in name fields are accepted 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\03-form-invalid-data-Check-506b3-in-name-fields-are-accepted-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Special characters in postal code are accepted" classname="03-form-invalid-data.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|03-form-invalid-data-Check-1d0a7-in-postal-code-are-accepted-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 03-form-invalid-data.spec.ts:65:7 › Checkout Form Validation - Invalid Input Data › Special characters in postal code are accepted 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\03-form-invalid-data-Check-1d0a7-in-postal-code-are-accepted-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Whitespace-only input in name fields handling" classname="03-form-invalid-data.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|03-form-invalid-data-Check-f055e-put-in-name-fields-handling-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe" type="Error">
+<![CDATA[  [firefox] › 03-form-invalid-data.spec.ts:81:7 › Checkout Form Validation - Invalid Input Data › Whitespace-only input in name fields handling 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\manis\AppData\Local\ms-playwright\firefox-1511\firefox\firefox.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\..\test-results\03-form-invalid-data-Check-f055e-put-in-name-fields-handling-firefox\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="04-edge-cases.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="firefox" tests="4" failures="0" skipped="4" time="0.003" errors="0">
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Very long text input (50+ characters) in first and last name fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Maximum length input testing (255+ characters)" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › International characters (Unicode) in name fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Leading and trailing spaces in form fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="05-navigation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="firefox" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Navigation and Cart Persistence Tests › Cancel button on checkout step one returns to cart with items intact" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Cancel button on checkout step two returns to cart with items intact" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Back/Continue Shopping button from cart returns to products page" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Sequential navigation through complete checkout workflow" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Back Home from completion page resets cart" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="06-order-overview.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="firefox" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Order Overview and Price Calculation Tests › Verify correct price calculations with 2 items" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Verify correct price calculations with multiple items (4+)" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Verify order overview displays correct payment and shipping info" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Order overview displays complete item details" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="07-ui-validation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="firefox" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="UI Elements and Form Visibility Tests › Checkout step one form fields are properly labeled" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Error messages display correctly and are dismissible" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Buttons are functional and properly labeled" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Cart item cards display all required information" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Order overview table structure is clear and readable" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="08-cart-review.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="firefox" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Cart Review and Product Details Tests › Cart displays correct item quantities and totals" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Remove button removes items from cart individually" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Cart displays product descriptions and links" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Cart navigation options are available and functional" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="09-negative-scenarios.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="firefox" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Cannot proceed with form containing only whitespace" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Tab order and form navigation using keyboard" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Form field input constraints and max length behavior" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="10-order-completion.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="firefox" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Order Completion and Confirmation Tests › Order confirmation page displays all required elements" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Completion and Confirmation Tests › Back Home button clears cart and returns to products page" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Completion and Confirmation Tests › Order confirmation URL is correct" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="01-happy-path.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="webkit" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Checkout Happy Path - Successful Order Completion › Complete successful checkout with 2 items" classname="01-happy-path.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Happy Path - Successful Order Completion › Complete checkout with multiple items (4+)" classname="01-happy-path.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Happy Path - Successful Order Completion › Successful order and back home navigation clears cart" classname="01-happy-path.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="02-form-validation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="webkit" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when all fields are empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when first name is empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when last name is empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when postal code is empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when only first name is filled" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="03-form-invalid-data.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="webkit" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Checkout Form Validation - Invalid Input Data › Special characters in name fields are accepted" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Numeric values in name fields are accepted" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Special characters in postal code are accepted" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Whitespace-only input in name fields handling" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="04-edge-cases.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="webkit" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Very long text input (50+ characters) in first and last name fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Maximum length input testing (255+ characters)" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › International characters (Unicode) in name fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Leading and trailing spaces in form fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="05-navigation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="webkit" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Navigation and Cart Persistence Tests › Cancel button on checkout step one returns to cart with items intact" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Cancel button on checkout step two returns to cart with items intact" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Back/Continue Shopping button from cart returns to products page" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Sequential navigation through complete checkout workflow" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Back Home from completion page resets cart" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="06-order-overview.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="webkit" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Order Overview and Price Calculation Tests › Verify correct price calculations with 2 items" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Verify correct price calculations with multiple items (4+)" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Verify order overview displays correct payment and shipping info" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Order overview displays complete item details" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="07-ui-validation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="webkit" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="UI Elements and Form Visibility Tests › Checkout step one form fields are properly labeled" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Error messages display correctly and are dismissible" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Buttons are functional and properly labeled" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Cart item cards display all required information" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Order overview table structure is clear and readable" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="08-cart-review.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="webkit" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Cart Review and Product Details Tests › Cart displays correct item quantities and totals" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Remove button removes items from cart individually" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Cart displays product descriptions and links" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Cart navigation options are available and functional" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="09-negative-scenarios.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="webkit" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Cannot proceed with form containing only whitespace" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Tab order and form navigation using keyboard" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Form field input constraints and max length behavior" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="10-order-completion.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="webkit" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Order Completion and Confirmation Tests › Order confirmation page displays all required elements" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Completion and Confirmation Tests › Back Home button clears cart and returns to products page" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Completion and Confirmation Tests › Order confirmation URL is correct" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="01-happy-path.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Chrome" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Checkout Happy Path - Successful Order Completion › Complete successful checkout with 2 items" classname="01-happy-path.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Happy Path - Successful Order Completion › Complete checkout with multiple items (4+)" classname="01-happy-path.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Happy Path - Successful Order Completion › Successful order and back home navigation clears cart" classname="01-happy-path.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="02-form-validation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Chrome" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when all fields are empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when first name is empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when last name is empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when postal code is empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when only first name is filled" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="03-form-invalid-data.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Chrome" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Checkout Form Validation - Invalid Input Data › Special characters in name fields are accepted" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Numeric values in name fields are accepted" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Special characters in postal code are accepted" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Whitespace-only input in name fields handling" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="04-edge-cases.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Chrome" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Very long text input (50+ characters) in first and last name fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Maximum length input testing (255+ characters)" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › International characters (Unicode) in name fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Leading and trailing spaces in form fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="05-navigation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Chrome" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Navigation and Cart Persistence Tests › Cancel button on checkout step one returns to cart with items intact" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Cancel button on checkout step two returns to cart with items intact" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Back/Continue Shopping button from cart returns to products page" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Sequential navigation through complete checkout workflow" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Back Home from completion page resets cart" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="06-order-overview.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Chrome" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Order Overview and Price Calculation Tests › Verify correct price calculations with 2 items" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Verify correct price calculations with multiple items (4+)" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Verify order overview displays correct payment and shipping info" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Order overview displays complete item details" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="07-ui-validation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Chrome" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="UI Elements and Form Visibility Tests › Checkout step one form fields are properly labeled" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Error messages display correctly and are dismissible" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Buttons are functional and properly labeled" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Cart item cards display all required information" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Order overview table structure is clear and readable" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="08-cart-review.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Chrome" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Cart Review and Product Details Tests › Cart displays correct item quantities and totals" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Remove button removes items from cart individually" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Cart displays product descriptions and links" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Cart navigation options are available and functional" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="09-negative-scenarios.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Chrome" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Cannot proceed with form containing only whitespace" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Tab order and form navigation using keyboard" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Form field input constraints and max length behavior" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="10-order-completion.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Chrome" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Order Completion and Confirmation Tests › Order confirmation page displays all required elements" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Completion and Confirmation Tests › Back Home button clears cart and returns to products page" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Completion and Confirmation Tests › Order confirmation URL is correct" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="01-happy-path.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Safari" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Checkout Happy Path - Successful Order Completion › Complete successful checkout with 2 items" classname="01-happy-path.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Happy Path - Successful Order Completion › Complete checkout with multiple items (4+)" classname="01-happy-path.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Happy Path - Successful Order Completion › Successful order and back home navigation clears cart" classname="01-happy-path.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="02-form-validation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Safari" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when all fields are empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when first name is empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when last name is empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when postal code is empty" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Missing Fields › Validation error when only first name is filled" classname="02-form-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="03-form-invalid-data.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Safari" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Checkout Form Validation - Invalid Input Data › Special characters in name fields are accepted" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Numeric values in name fields are accepted" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Special characters in postal code are accepted" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Validation - Invalid Input Data › Whitespace-only input in name fields handling" classname="03-form-invalid-data.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="04-edge-cases.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Safari" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Very long text input (50+ characters) in first and last name fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Maximum length input testing (255+ characters)" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › International characters (Unicode) in name fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Form Edge Cases - Long and Extreme Inputs › Leading and trailing spaces in form fields" classname="04-edge-cases.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="05-navigation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Safari" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Navigation and Cart Persistence Tests › Cancel button on checkout step one returns to cart with items intact" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Cancel button on checkout step two returns to cart with items intact" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Back/Continue Shopping button from cart returns to products page" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Sequential navigation through complete checkout workflow" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation and Cart Persistence Tests › Back Home from completion page resets cart" classname="05-navigation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="06-order-overview.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Safari" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Order Overview and Price Calculation Tests › Verify correct price calculations with 2 items" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Verify correct price calculations with multiple items (4+)" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Verify order overview displays correct payment and shipping info" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Overview and Price Calculation Tests › Order overview displays complete item details" classname="06-order-overview.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="07-ui-validation.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Safari" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="UI Elements and Form Visibility Tests › Checkout step one form fields are properly labeled" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Error messages display correctly and are dismissible" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Buttons are functional and properly labeled" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Cart item cards display all required information" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UI Elements and Form Visibility Tests › Order overview table structure is clear and readable" classname="07-ui-validation.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="08-cart-review.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Safari" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Cart Review and Product Details Tests › Cart displays correct item quantities and totals" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Remove button removes items from cart individually" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Cart displays product descriptions and links" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cart Review and Product Details Tests › Cart navigation options are available and functional" classname="08-cart-review.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="09-negative-scenarios.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Safari" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Cannot proceed with form containing only whitespace" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Tab order and form navigation using keyboard" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Negative Scenarios - Form Submission Edge Cases › Form field input constraints and max length behavior" classname="09-negative-scenarios.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="10-order-completion.spec.ts" timestamp="2026-04-06T09:25:48.778Z" hostname="Mobile Safari" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Order Completion and Confirmation Tests › Order confirmation page displays all required elements" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Completion and Confirmation Tests › Back Home button clears cart and returns to products page" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Order Completion and Confirmation Tests › Order confirmation URL is correct" classname="10-order-completion.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

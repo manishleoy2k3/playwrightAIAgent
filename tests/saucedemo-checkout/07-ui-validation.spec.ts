@@ -1,25 +1,14 @@
 // spec: specs/saucedemo-checkout-test-plan.md
 // Category: UI Elements and Form Visibility Tests
 
-import { test, expect } from '@playwright/test';
+import { authenticatedTest as test, expect } from '../fixtures';
 
 const BASE_URL = 'https://www.saucedemo.com';
-const CREDENTIALS = {
-  username: 'standard_user',
-  password: 'secret_sauce'
-};
 
 /**
- * Helper function to login and navigate to checkout step one
+ * Helper function to navigate to checkout step one (assumes authenticated page)
  */
-async function loginAndNavigateToCheckout(page: any) {
-  await page.goto(BASE_URL);
-  await page.locator('[data-test="username"]').fill(CREDENTIALS.username);
-  await page.locator('[data-test="password"]').fill(CREDENTIALS.password);
-  await page.locator('[data-test="login-button"]').click();
-  
-  await expect(page).toHaveURL(/.*inventory.html/);
-  
+async function navigateToCheckout(page: any) {
   // Add an item to cart
   await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
   
@@ -32,9 +21,9 @@ async function loginAndNavigateToCheckout(page: any) {
 
 test.describe('UI Elements and Form Visibility Tests', () => {
   
-  test('Checkout step one form fields are properly labeled', async ({ page }) => {
-    // Step 1: Login and navigate to checkout step one
-    await loginAndNavigateToCheckout(page);
+  test('Checkout step one form fields are properly labeled', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout step one
+    await navigateToCheckout(page);
 
     // Step 2: Verify page heading
     await expect(page.locator('text=Checkout: Your Information')).toBeVisible();
@@ -56,9 +45,9 @@ test.describe('UI Elements and Form Visibility Tests', () => {
     await expect(zipInput).toHaveAttribute('placeholder', /Postal Code|Zip/i);
   });
 
-  test('Error messages display correctly and are dismissible', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Error messages display correctly and are dismissible', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Click Continue without filling fields
     await page.locator('[data-test="continue"]').click();
@@ -92,14 +81,8 @@ test.describe('UI Elements and Form Visibility Tests', () => {
     await expect(page.locator('[data-test="firstName"]')).toBeVisible();
   });
 
-  test('Buttons are functional and properly labeled', async ({ page }) => {
-    // Step 1: Login and add item
-    await page.goto(BASE_URL);
-    await page.locator('[data-test="username"]').fill(CREDENTIALS.username);
-    await page.locator('[data-test="password"]').fill(CREDENTIALS.password);
-    await page.locator('[data-test="login-button"]').click();
-    
-    await expect(page).toHaveURL(/.*inventory.html/);
+  test('Buttons are functional and properly labeled', async ({ authenticatedPage: page }) => {
+    // Step 1: Add item
     await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
     await page.locator('[data-test="shopping-cart-link"]').click();
 
@@ -153,13 +136,8 @@ test.describe('UI Elements and Form Visibility Tests', () => {
     await expect(cancelBtn2).toBeEnabled();
   });
 
-  test('Cart item cards display all required information', async ({ page }) => {
-    // Step 1: Login and add items
-    await page.goto(BASE_URL);
-    await page.locator('[data-test="username"]').fill(CREDENTIALS.username);
-    await page.locator('[data-test="password"]').fill(CREDENTIALS.password);
-    await page.locator('[data-test="login-button"]').click();
-    
+  test('Cart item cards display all required information', async ({ authenticatedPage: page }) => {
+    // Step 1: Add items
     await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
     await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
 
@@ -189,9 +167,9 @@ test.describe('UI Elements and Form Visibility Tests', () => {
     await expect(qtyHeaders).toBeVisible();
   });
 
-  test('Order overview table structure is clear and readable', async ({ page }) => {
-    // Step 1: Login and complete checkout step one
-    await loginAndNavigateToCheckout(page);
+  test('Order overview table structure is clear and readable', async ({ authenticatedPage: page }) => {
+    // Step 1: Complete checkout step one
+    await navigateToCheckout(page);
 
     // Fill and submit step one
     await page.locator('[data-test="firstName"]').fill('John');

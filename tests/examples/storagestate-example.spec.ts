@@ -12,7 +12,7 @@
  * 2. Run: npx playwright test tests/examples/storagestate-example.spec.ts
  */
 
-import { test, expect } from '@playwright/test';
+import { expect } from '@playwright/test';
 import {
   authenticatedTest,
   advancedTest,
@@ -24,6 +24,8 @@ import {
   verifyOrderCompletion,
   TEST_USERS,
 } from '../fixtures';
+
+const test = authenticatedTest;
 
 /**
  * EXAMPLE 1: Using authenticatedTest fixture
@@ -92,8 +94,8 @@ test.describe('✅ EXAMPLE 1: Using Pre-Authenticated Session', () => {
  * EXAMPLE 2: Using advancedTest with utilities
  * Full suite of helpers available
  */
-test.describe('✅ EXAMPLE 2: Using Advanced Test Fixtures', () => {
-  test('use multiple assertions with authenticated context', async ({ 
+advTest.describe('✅ EXAMPLE 2: Using Advanced Test Fixtures', () => {
+  advTest('use multiple assertions with authenticated context', async ({ 
     authenticatedPage, 
     addToCart, 
     goToCheckout 
@@ -116,7 +118,7 @@ test.describe('✅ EXAMPLE 2: Using Advanced Test Fixtures', () => {
     console.log('✅ Using advanced test fixtures!');
   });
 
-  test('create multiple authenticated contexts', async ({ getLoggedInPage }) => {
+  advTest('create multiple authenticated contexts', async ({ getLoggedInPage }) => {
     // ✨ Can create multiple logged-in pages as needed
     
     // Create two separate authenticated pages

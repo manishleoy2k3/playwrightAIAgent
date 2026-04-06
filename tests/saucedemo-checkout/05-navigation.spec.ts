@@ -1,33 +1,14 @@
 // spec: specs/saucedemo-checkout-test-plan.md
 // Category: Navigation and Cart Persistence Tests
 
-import { test, expect } from '@playwright/test';
+import { authenticatedTest as test, expect } from '../fixtures';
 
 const BASE_URL = 'https://www.saucedemo.com';
-const CREDENTIALS = {
-  username: 'standard_user',
-  password: 'secret_sauce'
-};
-
-/**
- * Helper function to login 
- */
-async function login(page: any) {
-  await page.goto(BASE_URL);
-  await page.locator('[data-test="username"]').fill(CREDENTIALS.username);
-  await page.locator('[data-test="password"]').fill(CREDENTIALS.password);
-  await page.locator('[data-test="login-button"]').click();
-  
-  await expect(page).toHaveURL(/.*inventory.html/);
-}
 
 test.describe('Navigation and Cart Persistence Tests', () => {
   
-  test('Cancel button on checkout step one returns to cart with items intact', async ({ page }) => {
-    // Step 1: Login
-    await login(page);
-
-    // Step 2: Add items to cart
+  test('Cancel button on checkout step one returns to cart with items intact', async ({ authenticatedPage: page }) => {
+    // Step 1: Add items to cart
     await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
     await page.locator('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click();
     
@@ -58,10 +39,8 @@ test.describe('Navigation and Cart Persistence Tests', () => {
     await expect(page.locator('[data-test="shopping-cart-link"]').filter({ hasText: '2' })).toBeVisible();
   });
 
-  test('Cancel button on checkout step two returns to cart with items intact', async ({ page }) => {
-    // Step 1: Login and add items
-    await login(page);
-    
+  test('Cancel button on checkout step two returns to cart with items intact', async ({ authenticatedPage: page }) => {
+    // Step 1: Add items
     await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
     await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
 
@@ -97,10 +76,8 @@ test.describe('Navigation and Cart Persistence Tests', () => {
     await expect(page.locator('text=$9.99')).toBeVisible();
   });
 
-  test('Back/Continue Shopping button from cart returns to products page', async ({ page }) => {
-    // Step 1: Login and add items
-    await login(page);
-    
+  test('Back/Continue Shopping button from cart returns to products page', async ({ authenticatedPage: page }) => {
+    // Step 1: Add items
     await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
     await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
 
@@ -137,10 +114,8 @@ test.describe('Navigation and Cart Persistence Tests', () => {
     await expect(page.getByRole('link', { name: /Sauce Labs Bolt T-Shirt/ })).toBeVisible();
   });
 
-  test('Sequential navigation through complete checkout workflow', async ({ page }) => {
-    // Step 1: Login and add item
-    await login(page);
-    
+  test('Sequential navigation through complete checkout workflow', async ({ authenticatedPage: page }) => {
+    // Step 1: Add item
     await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
     await expect(page.locator('[data-test="shopping-cart-link"]').filter({ hasText: '1' })).toBeVisible();
 
@@ -177,10 +152,8 @@ test.describe('Navigation and Cart Persistence Tests', () => {
     await expect(page).toHaveURL(/.*inventory.html/);
   });
 
-  test('Back Home from completion page resets cart', async ({ page }) => {
+  test('Back Home from completion page resets cart', async ({ authenticatedPage: page }) => {
     // Step 1: Complete a full checkout
-    await login(page);
-    
     await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
     await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
 

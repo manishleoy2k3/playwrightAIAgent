@@ -1,26 +1,14 @@
 // spec: specs/saucedemo-checkout-test-plan.md
 // Category: Order Overview and Price Calculation Tests
 
-import { test, expect } from '@playwright/test';
+import { authenticatedTest as test, expect } from '../fixtures';
 
 const BASE_URL = 'https://www.saucedemo.com';
-const CREDENTIALS = {
-  username: 'standard_user',
-  password: 'secret_sauce'
-};
 
 /**
- * Helper function to login and navigate to checkout step two
+ * Helper function to navigate to checkout step two (assumes authenticated page)
  */
-async function loginAndNavigateToOverview(page: any, items: { selector: string }[], firstName: string = 'John', lastName: string = 'Doe', zip: string = '12345') {
-  // Login
-  await page.goto(BASE_URL);
-  await page.locator('[data-test="username"]').fill(CREDENTIALS.username);
-  await page.locator('[data-test="password"]').fill(CREDENTIALS.password);
-  await page.locator('[data-test="login-button"]').click();
-  
-  await expect(page).toHaveURL(/.*inventory.html/);
-  
+async function navigateToOverview(page: any, items: { selector: string }[], firstName: string = 'John', lastName: string = 'Doe', zip: string = '12345') {
   // Add items to cart
   for (const item of items) {
     await page.locator(item.selector).click();
@@ -43,14 +31,14 @@ async function loginAndNavigateToOverview(page: any, items: { selector: string }
 
 test.describe('Order Overview and Price Calculation Tests', () => {
   
-  test('Verify correct price calculations with 2 items', async ({ page }) => {
-    // Step 1: Login and add Backpack + Bolt T-Shirt
+  test('Verify correct price calculations with 2 items', async ({ authenticatedPage: page }) => {
+    // Step 1: Add Backpack + Bolt T-Shirt
     const items = [
       { selector: '[data-test="add-to-cart-sauce-labs-backpack"]', name: 'Backpack', price: 29.99 },
       { selector: '[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]', name: 'Bolt T-Shirt', price: 15.99 }
     ];
     
-    await loginAndNavigateToOverview(page, items);
+    await navigateToOverview(page, items);
 
     // Step 2: Verify order overview displays items
     await expect(page.getByRole('link', { name: /Sauce Labs Backpack/ })).toBeVisible();
@@ -67,7 +55,7 @@ test.describe('Order Overview and Price Calculation Tests', () => {
     await expect(page.locator('text=Total: $49.66')).toBeVisible();
   });
 
-  test('Verify correct price calculations with multiple items (4+)', async ({ page }) => {
+  test('Verify correct price calculations with multiple items (4+)', async ({ authenticatedPage: page }) => {
     // Step 1: Add 4 items
     const items = [
       { selector: '[data-test="add-to-cart-sauce-labs-backpack"]', price: 29.99 },
@@ -76,7 +64,7 @@ test.describe('Order Overview and Price Calculation Tests', () => {
       { selector: '[data-test="add-to-cart-sauce-labs-onesie"]', price: 7.99 }
     ];
     
-    await loginAndNavigateToOverview(page, items);
+    await navigateToOverview(page, items);
 
     // Step 2: Verify all items are displayed
     await expect(page.getByRole('link', { name: /Sauce Labs Backpack/ })).toBeVisible();
@@ -95,13 +83,13 @@ test.describe('Order Overview and Price Calculation Tests', () => {
     await expect(page.locator('text=Total: $69.08')).toBeVisible();
   });
 
-  test('Verify order overview displays correct payment and shipping info', async ({ page }) => {
-    // Step 1: Login and navigate to overview
+  test('Verify order overview displays correct payment and shipping info', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to overview
     const items = [
       { selector: '[data-test="add-to-cart-sauce-labs-backpack"]' }
     ];
     
-    await loginAndNavigateToOverview(page, items);
+    await navigateToOverview(page, items);
 
     // Step 2: Verify Payment Information section
     await expect(page.locator('text=Payment Information:')).toBeVisible();
@@ -112,14 +100,14 @@ test.describe('Order Overview and Price Calculation Tests', () => {
     await expect(page.locator('text=Free Pony Express Delivery!')).toBeVisible();
   });
 
-  test('Order overview displays complete item details', async ({ page }) => {
+  test('Order overview displays complete item details', async ({ authenticatedPage: page }) => {
     // Step 1: Add 2 items and navigate to overview
     const items = [
       { selector: '[data-test="add-to-cart-sauce-labs-backpack"]' },
       { selector: '[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]' }
     ];
     
-    await loginAndNavigateToOverview(page, items);
+    await navigateToOverview(page, items);
 
     // Step 2: Verify overview page heading
     await expect(page.locator('text=Checkout: Overview')).toBeVisible();

@@ -1,25 +1,14 @@
 // spec: specs/saucedemo-checkout-test-plan.md
 // Category: Negative Scenarios - Form Submission Edge Cases
 
-import { test, expect } from '@playwright/test';
+import { authenticatedTest as test, expect } from '../fixtures';
 
 const BASE_URL = 'https://www.saucedemo.com';
-const CREDENTIALS = {
-  username: 'standard_user',
-  password: 'secret_sauce'
-};
 
 /**
- * Helper function to login and navigate to checkout step one
+ * Helper function to navigate to checkout step one (assumes authenticated page)
  */
-async function loginAndNavigateToCheckout(page: any) {
-  await page.goto(BASE_URL);
-  await page.locator('[data-test="username"]').fill(CREDENTIALS.username);
-  await page.locator('[data-test="password"]').fill(CREDENTIALS.password);
-  await page.locator('[data-test="login-button"]').click();
-  
-  await expect(page).toHaveURL(/.*inventory.html/);
-  
+async function navigateToCheckout(page: any) {
   // Add an item to cart
   await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
   
@@ -32,9 +21,9 @@ async function loginAndNavigateToCheckout(page: any) {
 
 test.describe('Negative Scenarios - Form Submission Edge Cases', () => {
   
-  test('Cannot proceed with form containing only whitespace', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Cannot proceed with form containing only whitespace', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Fill form with only whitespace
     await page.locator('[data-test="firstName"]').fill('   '); // spaces only
@@ -61,9 +50,9 @@ test.describe('Negative Scenarios - Form Submission Edge Cases', () => {
     }
   });
 
-  test('Tab order and form navigation using keyboard', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Tab order and form navigation using keyboard', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Click in First Name field
     await page.locator('[data-test="firstName"]').click();
@@ -100,9 +89,9 @@ test.describe('Negative Scenarios - Form Submission Edge Cases', () => {
     await expect(page.locator('[data-test="postalCode"]')).toHaveValue('12345');
   });
 
-  test('Form field input constraints and max length behavior', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Form field input constraints and max length behavior', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Attempt to enter 200 characters in First Name field
     const longText = 'A'.repeat(200);

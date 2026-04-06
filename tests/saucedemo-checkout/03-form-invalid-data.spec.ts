@@ -1,25 +1,14 @@
 // spec: specs/saucedemo-checkout-test-plan.md
 // Category: Checkout Form Validation - Invalid Input Data
 
-import { test, expect } from '@playwright/test';
+import { authenticatedTest as test, expect } from '../fixtures';
 
 const BASE_URL = 'https://www.saucedemo.com';
-const CREDENTIALS = {
-  username: 'standard_user',
-  password: 'secret_sauce'
-};
 
 /**
- * Helper function to login and navigate to checkout step one
+ * Helper function to navigate to checkout step one (assumes authenticated page)
  */
-async function loginAndNavigateToCheckout(page: any) {
-  await page.goto(BASE_URL);
-  await page.locator('[data-test="username"]').fill(CREDENTIALS.username);
-  await page.locator('[data-test="password"]').fill(CREDENTIALS.password);
-  await page.locator('[data-test="login-button"]').click();
-  
-  await expect(page).toHaveURL(/.*inventory.html/);
-  
+async function navigateToCheckout(page: any) {
   // Add an item to cart
   await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
   
@@ -32,9 +21,9 @@ async function loginAndNavigateToCheckout(page: any) {
 
 test.describe('Checkout Form Validation - Invalid Input Data', () => {
   
-  test('Special characters in name fields are accepted', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Special characters in name fields are accepted', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Enter special characters in all fields
     await page.locator('[data-test="firstName"]').fill('@!#$%');
@@ -53,9 +42,9 @@ test.describe('Checkout Form Validation - Invalid Input Data', () => {
     await expect(errorMessage).not.toBeVisible({ timeout: 2000 }).catch(() => {});
   });
 
-  test('Numeric values in name fields are accepted', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Numeric values in name fields are accepted', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Enter numeric values in name fields
     await page.locator('[data-test="firstName"]').fill('123');
@@ -73,9 +62,9 @@ test.describe('Checkout Form Validation - Invalid Input Data', () => {
     await expect(errorMessage).not.toBeVisible({ timeout: 2000 }).catch(() => {});
   });
 
-  test('Special characters in postal code are accepted', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Special characters in postal code are accepted', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Enter special characters in postal code field
     await page.locator('[data-test="firstName"]').fill('John');
@@ -89,9 +78,9 @@ test.describe('Checkout Form Validation - Invalid Input Data', () => {
     await expect(page).toHaveURL(/.*checkout-step-two.html/);
   });
 
-  test('Whitespace-only input in name fields handling', async ({ page }) => {
-    // Step 1: Login and navigate to checkout
-    await loginAndNavigateToCheckout(page);
+  test('Whitespace-only input in name fields handling', async ({ authenticatedPage: page }) => {
+    // Step 1: Navigate to checkout
+    await navigateToCheckout(page);
 
     // Step 2: Enter only spaces in name fields
     await page.locator('[data-test="firstName"]').fill('     '); // 5 spaces

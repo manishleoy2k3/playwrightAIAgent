@@ -7,18 +7,28 @@
  * This generates auth files that other tests reuse
  */
 
-import { chromium, FullConfig } from '@playwright/test';
+import { chromium, FullConfig, Browser } from '@playwright/test';
 import * as fs from 'fs';
 import * as path from 'path';
 
 const BASE_URL = 'https://www.saucedemo.com';
 
+// Define interface for authentication configuration
+interface AuthConfig {
+  name: string;
+  credentials: {
+    username: string;
+    password: string;
+  };
+  storageStatePath: string;
+}
+
 // Define authentication configurations for different roles
-const AUTH_CONFIGS = {
+const AUTH_CONFIGS: Record<string, AuthConfig> = {
   user: {
     name: 'user_auth',
     credentials: {
-      username: 'standard_user',
+      username: ' ',
       password: 'secret_sauce'
     },
     storageStatePath: 'playwright/.auth/user.json'
@@ -46,7 +56,7 @@ const AUTH_CONFIGS = {
  * @param browser - Chromium browser instance
  * @param config - Auth configuration with credentials and storage path
  */
-async function authenticateUser(browser, config) {
+async function authenticateUser(browser: Browser, config: AuthConfig) {
   console.log(`🔐 Authenticating as: ${config.name}...`);
   
   const page = await browser.newPage();

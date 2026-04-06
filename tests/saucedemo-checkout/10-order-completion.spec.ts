@@ -1,26 +1,14 @@
 // spec: specs/saucedemo-checkout-test-plan.md
 // Category: Order Completion and Confirmation Tests
 
-import { test, expect } from '@playwright/test';
+import { authenticatedTest as test, expect } from '../fixtures';
 
 const BASE_URL = 'https://www.saucedemo.com';
-const CREDENTIALS = {
-  username: 'standard_user',
-  password: 'secret_sauce'
-};
 
 /**
- * Helper function to complete full checkout workflow
+ * Helper function to complete full checkout workflow (assumes authenticated page)
  */
 async function completeCheckout(page: any) {
-  // Login
-  await page.goto(BASE_URL);
-  await page.locator('[data-test="username"]').fill(CREDENTIALS.username);
-  await page.locator('[data-test="password"]').fill(CREDENTIALS.password);
-  await page.locator('[data-test="login-button"]').click();
-  
-  await expect(page).toHaveURL(/.*inventory.html/);
-  
   // Add item to cart
   await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
   
@@ -44,7 +32,7 @@ async function completeCheckout(page: any) {
 
 test.describe('Order Completion and Confirmation Tests', () => {
   
-  test('Order confirmation page displays all required elements', async ({ page }) => {
+  test('Order confirmation page displays all required elements', async ({ authenticatedPage: page }) => {
     // Step 1: Complete full checkout workflow
     await completeCheckout(page);
 
@@ -72,7 +60,7 @@ test.describe('Order Completion and Confirmation Tests', () => {
     await expect(backHomeBtn).toBeEnabled();
   });
 
-  test('Back Home button clears cart and returns to products page', async ({ page }) => {
+  test('Back Home button clears cart and returns to products page', async ({ authenticatedPage: page }) => {
     // Step 1: Complete full checkout
     await completeCheckout(page);
 
@@ -105,7 +93,7 @@ test.describe('Order Completion and Confirmation Tests', () => {
     await expect(page.locator('text=Sauce Labs Onesie')).toBeVisible();
   });
 
-  test('Order confirmation URL is correct', async ({ page }) => {
+  test('Order confirmation URL is correct', async ({ authenticatedPage: page }) => {
     // Step 1: Complete full checkout
     await completeCheckout(page);
 

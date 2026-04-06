@@ -1,29 +1,13 @@
 // spec: specs/saucedemo-checkout-test-plan.md
 // Category: Checkout Happy Path - Successful Order Completion
 
-import { test, expect } from '@playwright/test';
+import { authenticatedTest as test, expect } from '../fixtures';
 
 const BASE_URL = 'https://www.saucedemo.com';
-const CREDENTIALS = {
-  username: 'standard_user',
-  password: 'secret_sauce'
-};
 
 test.describe('Checkout Happy Path - Successful Order Completion', () => {
-  test.beforeEach(async ({ page }) => {
-    // Navigate to login page
-    await page.goto(BASE_URL);
-    
-    // Login with standard user
-    await page.locator('[data-test="username"]').fill(CREDENTIALS.username);
-    await page.locator('[data-test="password"]').fill(CREDENTIALS.password);
-    await page.locator('[data-test="login-button"]').click();
-    
-    // Verify user is on products page
-    await expect(page).toHaveURL(/.*inventory.html/);
-  });
 
-  test('Complete successful checkout with 2 items', async ({ page }) => {
+  test('Complete successful checkout with 2 items', async ({ authenticatedPage: page }) => {
     // Step 1: Verify products page is displayed with cart badge showing 0 or not visible
     const cartBadge = page.locator('[data-test="shopping-cart-link"]');
     await expect(cartBadge).toBeVisible();
